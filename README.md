@@ -929,3 +929,7 @@ result변수에 담아서 반환합니다.
         backgroundColor : '#000'
     });
 ````
+
+## 기준
+* ie7이상
+* ecma-262 3rd edition, december 1999
