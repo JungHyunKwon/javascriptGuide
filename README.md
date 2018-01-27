@@ -863,8 +863,13 @@ result변수에 담아서 반환합니다.
 
 오류 표출은 자유롭게 사용합니다.
 ````
+    //Bad
     new Error('내용');
+
+    //Good
     console.error('내용');
+
+    //Good
     throw '내용';
 ````
 
