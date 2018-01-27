@@ -719,8 +719,62 @@ js파일 또는 스크립트 태그 맨 윗줄에 'use strict'를 반드시 적�
 	newHelloWorld = helloWorld.slice();
 ````
 
+## 숫자
+리터럴 구문을 사용합니다.
+
+````
+    //Bad
+    var helloWorld = new Number(1);
+
+    //Bad
+    var helloWorld = Number(1);
+
+    //Good
+    var helloWorld = 1;
+````
+
+## 문자
+리터럴 구문을 사용합니다.
+
+````
+    //Bad
+    var helloWorld = new String('helloWorld');
+
+    //Bad
+    var helloWorld = String('helloWorld');
+
+    //Good
+    var helloWorld = 'helloWorld';
+````
+
+### parseInt 메소드
+문자형에서 숫자형으로 변환할때 10진법을 명시합니다.
+
+````
+    //Bad
+    var helloWorld = parseInt('1');
+
+    //Good
+    var helloWorld = parseInt('1', 10);
+````
+
+## 불린
+리터럴 구문을 사용합니다.
+
+````
+    //Bad
+    var helloWorld = new Boolean(true);
+
+    //Bad
+    var helloWorld = Boolean(true);
+
+    //Good
+    var helloWorld = true;
+````
+
 ## 함수
 <http://usejsdoc.org/>에 맞춰 작성합니다.
+
 선언함수를 사용합니다.
 ````
     //Bad
@@ -869,57 +923,4 @@ result변수에 담아서 반환합니다.
         color : '#fff',
         backgroundColor : '#000'
     });
-````
-
-## 숫자
-리터럴 구문을 사용합니다.
-
-````
-    //Bad
-    var helloWorld = new Number(1);
-
-    //Bad
-    var helloWorld = Number(1);
-
-    //Good
-    var helloWorld = 1;
-````
-
-## 문자
-리터럴 구문을 사용합니다.
-
-````
-    //Bad
-    var helloWorld = new String('helloWorld');
-
-    //Bad
-    var helloWorld = String('helloWorld');
-
-    //Good
-    var helloWorld = 'helloWorld';
-````
-
-### parseInt 메소드
-문자형에서 숫자형으로 변환할때 10진법을 명시합니다.
-
-````
-    //Bad
-    var helloWorld = parseInt('1');
-
-    //Good
-    var helloWorld = parseInt('1', 10);
-````
-
-## 불린
-리터럴 구문을 사용합니다.
-
-````
-    //Bad
-    var helloWorld = new Boolean(true);
-
-    //Bad
-    var helloWorld = Boolean(true);
-
-    //Good
-    var helloWorld = true;
 ````
