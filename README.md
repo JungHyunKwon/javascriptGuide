@@ -720,8 +720,6 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
 
 ## 숫자
-리터럴 구문을 사용합니다.
-
 ````
     //Bad
     var helloWorld = new Number(1);
@@ -734,8 +732,6 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
 
 ## 문자
-리터럴 구문을 사용합니다.
-
 ````
     //Bad
     var helloWorld = new String('helloWorld');
@@ -759,8 +755,6 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
 
 ## 불린
-리터럴 구문을 사용합니다.
-
 ````
     //Bad
     var helloWorld = new Boolean(true);
