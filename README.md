@@ -458,7 +458,7 @@ js파일 또는 스크립트 태그 맨 윗줄에 'use strict'를 반드시 적�
 객체 프로퍼티명도 동일합니다.
 
 #### 금지단어
-['https://www.w3schools.com/js/js_reserved.asp'](https://www.w3schools.com/js/js_reserved.asp){: target="_blank" }
+<a href="https://www.w3schools.com/js/js_reserved.asp" title="새창" target="_blank">https://www.w3schools.com/js/js_reserved.asp</a>
 
 #### 축약
 이름이 너무길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약어를 제공하거나 누구나 알아볼 수 있어야 됩니다. 
@@ -726,7 +726,7 @@ js파일 또는 스크립트 태그 맨 윗줄에 'use strict'를 반드시 적�
 ````
 
 ## 함수
-['http://usejsdoc.org/'](http://usejsdoc.org/){: target="_blank" }에 맞춰 작성합니다.
+<a href="http://usejsdoc.org/" title="새창" target="_blank">http://usejsdoc.org/</a>
 
 선언함수를 사용합니다.
 ````
