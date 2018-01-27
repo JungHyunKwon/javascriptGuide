@@ -446,7 +446,7 @@ js파일 또는 스크립트 태그 맨 윗줄에 'use strict'를 반드시 적�
 ````
 #### 용어
 * nm : name
-* function : fn
+* fn : function
 * i ~ z : 루프 변수
 
 #### 규칙
