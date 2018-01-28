@@ -901,6 +901,19 @@ result변수에 담아서 한번만 반환합니다.
 	}
     }
 
+    //Bad
+    function helloWorld(say) {
+        var result;
+
+        if(say === 'hello') {
+	    result = true;
+	    return result;
+	}else if(say === 'world') {
+	    result = false;
+	    return result;
+	}
+    }
+
     //Good
     function helloWorld(say) {
         var result;
