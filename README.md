@@ -172,7 +172,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     //Bad
     ;function helloWorld() {
         //statement
-    };
+    }
 
 
     //Good
