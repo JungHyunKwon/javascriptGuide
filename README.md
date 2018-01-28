@@ -6,6 +6,17 @@
 ### strict 모드
 js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습니다.
 
+### 작성자 주석
+js파일 또는 스크립트 태그 'use strict' 다음에 작성바랍니다.
+
+````
+    /**
+     * @author 작업자
+     * @since 연-월-일
+     * @version 버전
+     */
+````
+
 ### 들여쓰기
 4칸
 
@@ -792,15 +803,6 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }
 ````
 
-제이쿼리 엘리먼트 변수는 $로 시작합니다.
-````
-    //Bad
-    var body = $('body');
-
-    //Good
-    var $body = $('body');
-````
-
 ## 객체
 
 리터럴 구문을 사용합니다.
@@ -844,7 +846,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 객체를 복사할때 이 함수를 사용한다
 ````
     /**
-     * @name 자바스크립트 객체복사
+     * @name 객체복사(자바스크립트)
      * @author JungHyunKwon
      * @since 2018-01-28
      * @version 1.0
@@ -868,7 +870,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }
 
     /**
-     * @name 제이쿼리 객체복사
+     * @name 객체복사(제이쿼리)
      * @author JungHyunKwon
      * @since 2018-01-28
      * @version 1.0
@@ -1029,7 +1031,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }());
 ````
 
-다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
+함수호출을 줄입시다.
 ````
     //Bad
     document.getElementsByTagName('body')[0].style.color = '#fff';
@@ -1152,16 +1154,142 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     throw '내용';
 ````
 
+에뮬레이션이 아닌 실제 인터넷익스플로러9이하에서 콘솔오류를 막으려면 아래 함수를 사용합니다.
+````
+    /**
+     * @name 콘솔오류방지
+     * @description 대체콘솔은 console.comment입니다.
+     * @since 2018-01-28
+     */
+    if(window.console.constructor !== Object) {
+        window.console = {
+            method : ['assert',
+                'clear',
+                'count',
+                'debug',
+                'dir',
+                'dirxml',
+                'error',
+                'exception',
+                'group',
+                'groupCollapsed',
+                'groupEnd',
+                'info',
+                'log',
+                'markTimeline',
+                'profile',
+                'profileEnd',
+                'table',
+                'time',
+                'timeEnd',
+                'timeStamp',
+                'trace',
+                'warn'],
+            comment : []
+        };
+
+        for(var i = 0, consoleMethodLength = console.method.length; i < consoleMethodLength; i++) {
+            if(typeof window.console[window.console.method[i]] !== 'function') {
+                window.console[window.console.method[i]] = function(comment) {
+                    this.comment.push(comment);
+                };
+            }
+        }
+    }
+````
+
+자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
+````
+    /**
+     * @name 형태얻기
+     * @since 2017-12-18
+     * @param {*} value
+     * @return {string}
+     */
+    function _getTypeof(value) {
+        var result = 'none';
+
+        //매개변수가 있을때
+        if(arguments.length) {
+            result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
+
+            //undefined일때(ie7, ie8에서 찾지 못함)
+            if(value === undefined) {
+                result = 'undefined';
+
+            //NaN일때(숫자로 처리되서 따로 처리함)
+            }else if(result === 'number' && isNaN(value)) {
+                result = 'NaN';
+
+            //Infinity일때(숫자로 처리되서 따로 처리함)
+            }else if(result === 'number' && !isFinite(value)) {
+            result = 'Infinity';
+
+            //document일때
+            }else if(result.substr(-8) === 'document') {
+            result = 'document';
+
+            //엘리먼트일때
+            }else if(result.substr(-7) === 'element') {
+            result = 'element';
+
+            //제이쿼리 객체일때
+            }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
+                var iCount = 0;
+
+                for(var i in value) {
+                    var iType = _getTypeof(value[i]);
+
+                    if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
+                        iCount++;
+                    }
+                }
+
+            if(value.length && value.length === iCount) {
+                result = 'jQueryElement';
+            }else{
+                result = 'jQueryObject';
+            }
+
+            //Invalid Date일때
+            }else if(result === 'date' && isNaN(new Date(value))) {
+                result = 'Invalid Date';
+
+            //class일때
+            }else if(result === 'function' && /^class\s/.test(Function.prototype.toString.call(value))) {
+                result = 'class';
+            }
+        }
+
+        return result;
+    }
+````
+
+### 규칙
+* 동사 + 명사
+* 동사 + 형용사 + 명사
+* 동사 + 명사 + 전치사 + 명사
+* 명사
+
+## 제이쿼리
+
 제이쿼리 작성할때 이 구문을 사용합니다.
 ````
-    'use strict';
-
     try {
         //제이쿼리가 있는지 확인
         if(typeof window.jQuery === 'function') {
             //$ 중첩 방지
             (function($) {
-                //내용
+		$.tag = $.tag || {
+		    wdw : $(window),
+		    dcmt : $(document),
+		    html : $('html')
+		};
+
+		$(function() {
+		    $.tag.head = $('head');
+		    $.tag.body = $('body');
+		});
             })(jQuery);
         }else{
             throw '제이쿼리가 없습니다.';
@@ -1171,11 +1299,143 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     }
 ````
 
-### 규칙
-* 동사 + 명사
-* 동사 + 형용사 + 명사
-* 동사 + 명사 + 전치사 + 명사
-* 명사
+제이쿼리 엘리먼트 변수는 $로 시작합니다.
+````
+    //Bad
+    var body = $('body');
+
+    //Good
+    var $body = $('body');
+````
+
+다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
+````
+    //example1
+
+    //Bad
+    $('body').addClass('hello');
+    $('body').addClass('world');
+
+    //Bad
+    var $body = $('body');
+
+    $body.addClass('hello');
+    $body.addClass('world');
+
+    //Bad
+    var $body = $('body');
+
+    $body.addClass('hello').addClass('world');
+
+    //Good
+    var $body = $('body');
+
+    $body.addClass('hello world');
+
+    //example2
+
+    //Bad
+    var $body = $('body');
+
+    $body.css('color', '#fff').css('background-color', '#000');
+
+    //Good
+    var $body = $('body');
+
+    $body.css({
+        color : '#fff',
+        backgroundColor : '#000'
+    });
+````
+
+이벤트에 네임스페이스를 부여하여 사용합니다.
+````
+    //Bad
+    $('body').on('click', function(event) {
+        //내용
+    });
+
+    //Good
+    $('body').on('click.common', function(event) {
+        //내용
+    });
+````
+
+이벤트는 on메소드를 사용합니다.
+````
+    //Bad
+    $('body').click(function(event) {
+        //내용
+    });
+
+    //Good
+    $('body').on('click', function(event) {
+        //내용
+    });
+````
+
+이벤트 콜백 함수에 매개변수 event를 기입합니다.
+````
+    //Bad
+    $('body').on('click', function() {
+        //내용
+    });
+
+    //Good
+    $('body').on('click', function(event) {
+        //내용
+    });
+````
+
+trigger대신 triggerHandler를 사용합니다.
+````
+    //Bad
+    var $body = $('body');
+
+    $body.on('click', function() {
+        //내용
+    });
+    
+    $body.trigger('click');
+
+    //Good
+    var $body = $('body');
+
+    $body.on('click', function() {
+        //내용
+    });
+    
+    $body.triggerHandler('click');
+````
+
+전체 이벤트를 부르지말고 특정 이벤트만 불러 사용합니다.
+````
+    //Bad
+    var $body = $('body');
+
+    $body.on('click.common', function() {
+        console.log(1);
+    });
+    
+    $body.on('click.main', function() {
+        console.log(2);
+    });
+
+    $body.triggerHandler('click');
+
+    //Good
+    var $body = $('body');
+
+    $body.on('click.common', function() {
+        console.log(1);
+    });
+    
+    $body.on('click.main', function() {
+        console.log(2);
+    });
+
+    $body.triggerHandler('click.common');
+````
 
 ## 기준
 ecma-262 3rd edition, december 1999
