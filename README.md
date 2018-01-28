@@ -1234,8 +1234,9 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
                     if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
                         iCount++;
+                    }
                 }
-                
+
                 if(value.length && value.length === iCount) {
                     result = 'jQueryElement';
                 }else{
