@@ -463,6 +463,18 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var _helloWorld = 'helloWorld';
 ````
 
+상수와 은닉은 섞어 사용하지 않습니다. 상수는 값이 변할 수 없다는 의미를 가지고 있고 은닉은 값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있는것입니다.
+````
+    //Bad
+    var _HELLO_WORLD = 'helloWorld';
+    
+    //Good
+    var _helloWorld = 'helloWorld';
+
+    //Good
+    var HELLO_WORLD = 'helloWorld';
+````
+
 #### 생성자
 파스칼 표기법으로 작성합니다.
 
