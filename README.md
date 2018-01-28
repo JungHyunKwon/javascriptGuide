@@ -1007,6 +1007,27 @@ result변수에 담아서 한번만 반환합니다.
     helloWorld('World');
 ````
 
+try catch안에서의 전역함수는 익명함수로 작성합니다.
+````
+    //Bad
+    try {
+        function helloWorld(say) {
+	    return say;
+	}
+    }catch(e) {
+        console.error(e);
+    }
+
+    //Good
+    try {
+        window.helloWorld = function(say) {
+	    return say;
+	}
+    }catch(e) {
+        console.error(e);
+    }
+````
+
 오류 표출은 자유롭게 사용합니다.
 ````
     //Bad
