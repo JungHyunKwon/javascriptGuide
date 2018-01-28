@@ -576,7 +576,7 @@ active | atv | 활성화
 actived | atvd | 활성화된
 prev | prv | 이전
 next | nxt | 다음
-is | | 있는지
+is | | ~~인가?
 has | | 가지고 있는지
 i ~ z | | 루프 변수
 all | a | 모든
