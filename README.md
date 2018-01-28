@@ -41,14 +41,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = 'helloWorld';
 
     if(helloWorld){
-        //statement
+        //내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     if(helloWorld) {
-        //statement
+        //내용
     }
     
     //example2
@@ -58,7 +58,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
         helloWroldCount = helloWorld.length;
 
     for(var i = 0; i < helloWroldCount; i++){
-        //statement
+        //내용
     }
     
     //Good
@@ -66,7 +66,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
         helloWroldCount = helloWorld.length;
 
     for(var i = 0; i < helloWroldCount; i++) {
-        //statement
+        //내용
     }
 
 ````
@@ -81,14 +81,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = 'helloWorld';
 
     if (helloWorld) {
-        //statement
+        //내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     if(helloWorld) {
-        //statement
+        //내용
     }
     
     //example2
@@ -98,7 +98,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
         helloWroldCount = helloWorld.length;
 
     for (var i = 0; i < helloWroldCount; i++) {
-        //statement
+        //내용
     }
 
     //Good
@@ -106,7 +106,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
         helloWroldCount = helloWorld.length;
 
     for(var i = 0; i < helloWroldCount; i++) {
-        //statement
+        //내용
     }
 
 ````
@@ -171,13 +171,13 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
     //Bad
     ;function helloWorld() {
-        //statement
+        //내용
     }
 
 
     //Good
     function helloWorld() {
-        //statement
+        //내용
     }
 
 ````
@@ -186,17 +186,17 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
     //Bad
     function helloWorld() {
-	//statement
+	//내용
     };
 
     //Good
     function helloWorld() {
-	//statement
+	//내용
     }
     
     //Good
     var helloWorld = function() {
-	//statement
+	//내용
     };
 
 ````
@@ -248,14 +248,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = 'helloWorld';
 
     if(helloWorld == 'helloWorld') {
-	//statement
+	//내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     if(helloWorld === 'helloWorld') {
-	//statement
+	//내용
     }
 ````
 
@@ -267,14 +267,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = true;
 
     if(helloWorld === true) {
-	//statement
+	//내용
     }
 
     //Good
     var helloWorld = true;
 
     if(helloWorld) {
-	//statement
+	//내용
     }
 
     //example2
@@ -283,14 +283,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = false;
 
     if(helloWorld === false) {
-	//statement
+	//내용
     }
 
     //Good
     var helloWorld = false;
 
     if(!helloWorld) {
-	//statement
+	//내용
     }
 ````
 
@@ -542,13 +542,16 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 축약 전 이름 | 축악 후 이름 | 설명
 | :------- | :------- | :-- |
 name | nm | 이름
-fn | function | 함수
+function | fn | 함수
 temp | tmp | 임시
 result | rst | 결과
 global | g | 전역
 index | idx | 인덱스
 count | cnt | 카운트
 length | len | 갯수
+array | arr | 배열
+object | obj | 객체
+value | val | 값
 
 ##### 단어
 
@@ -703,6 +706,16 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }
 ````
 
+같은 값을 선언할때 구문 입니다.
+````
+    //Bad
+    var hello = world = 'helloWorld';
+
+    //Good
+    var hello = 'helloWorld',
+        world = hello;
+````
+
 값에 따라 바뀌는 변수일때 구문입니다.
 ````
     //example1
@@ -760,7 +773,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     var helloWorld = 'helloWorld';
 
     for(var i = 0; i < helloWorld.length; i++) {
-	//statement
+	//내용
     }
 
     //Good
@@ -768,14 +781,14 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         helloWorldCount = helloWorld.length;
 
     for(var i = 0; i < helloWorldCount; i++) {
-	//statement
+	//내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     for(var i = 0, helloWorldCount = helloWorld.length; i < helloWorldCount; i++) {
-	//statement
+	//내용
     }
 ````
 
@@ -951,23 +964,23 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 ````
     //Bad
     var helloWorld = function() {
-	//statement
+	//내용
     };
 
     //Good
     function helloWorld() {
-	//statement
+	//내용
     }
 ````
 
 즉시실행함수는 이 구문을 사용합니다.
 ````
     (function() {
-	//statement
+	//내용
     })();
 
     (function() {
-	//statement
+	//내용
     }());
 ````
 
