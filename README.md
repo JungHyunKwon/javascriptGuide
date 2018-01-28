@@ -1058,7 +1058,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     body.style.backgroundColor = '#000';
 ````
 
-result변수에 담아서 한번만 반환합니다.
+한번만 반환하며 특별한 경우가 아닌경우 변수명은 result로 통일합니다.
 ````
     //Bad
     function helloWorld(say) {
