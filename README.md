@@ -803,18 +803,6 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 	newHelloWorld = helloWorld.slice();
 ````
 
-## 숫자
-````
-    //Bad
-    var helloWorld = new Number(1);
-
-    //Bad
-    var helloWorld = Number(1);
-
-    //Good
-    var helloWorld = 1;
-````
-
 ## 문자
 ````
     //Bad
@@ -828,9 +816,15 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 ````
 
 ### parseInt 메소드
-문자형에서 숫자형으로 변환할때 10진법을 명시합니다.
+문자형에서 숫자형으로 변환할때 특정값을 유도할때 빼고는 parseInt메소드를 사용하며 10진법을 명시합니다.
 
 ````
+    //Bad
+    var helloWorld = new Number('1');
+
+    //Bad
+    var helloWorld = Number('1');
+
     //Bad
     var helloWorld = parseInt('1');
 
@@ -838,7 +832,38 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     var helloWorld = parseInt('1', 10);
 ````
 
+형변환이 필요할때 아래구문을 이용합니다.
+````
+    //Bad
+    var helloWorld = 1.toString();
+
+    //Bad
+    var helloWorld = String(1);
+
+    //Bad
+    var helloWorld = new String(1);
+
+    //Good
+    var helloWorld = 1 + '';
+````
+
+## 숫자
+형변환이 필요할때 parseInt메소드를 기본으로 사용하며 예외빼고는 아래 구문을 이용합니다.
+
+````
+    //Bad
+    var helloWorld = new Number(1);
+
+    //Bad
+    var helloWorld = Number(1);
+
+    //Good
+    var helloWorld = 1;
+````
+
 ## 불린
+형변환이 필요할때 빼고는 아래 구문을 이용합니다.
+
 ````
     //Bad
     var helloWorld = new Boolean(true);
