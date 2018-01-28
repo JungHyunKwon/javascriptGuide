@@ -527,6 +527,9 @@ fn | function | 함수
 temp | tmp | 임시
 result | rst | 결과
 global | g | 전역
+index | idx | 인덱스
+count | cnt | 카운트
+length | len | 갯수
 
 ##### 단어
 
