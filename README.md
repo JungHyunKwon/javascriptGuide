@@ -207,17 +207,17 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 ````
     //Bad
     function helloWorld() {
-	    //내용
+        //내용
     };
 
     //Good
     function helloWorld() {
-	    //내용
+        //내용
     }
     
     //Good
     var helloWorld = function() {
-	    //내용
+        //내용
     };
 
 ````
@@ -269,14 +269,14 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var helloWorld = 'helloWorld';
 
     if(helloWorld == 'helloWorld') {
-	    //내용
+        //내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     if(helloWorld === 'helloWorld') {
-	    //내용
+        //내용
     }
 ````
 
@@ -288,14 +288,14 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var helloWorld = true;
 
     if(helloWorld === true) {
-	    //내용
+        //내용
     }
 
     //Good
     var helloWorld = true;
 
     if(helloWorld) {
-	    //내용
+        //내용
     }
 
     //example2
@@ -304,14 +304,14 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var helloWorld = false;
 
     if(helloWorld === false) {
-	    //내용
+        //내용
     }
 
     //Good
     var helloWorld = false;
 
     if(!helloWorld) {
-	    //내용
+        //내용
     }
 ````
 
@@ -335,16 +335,16 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     //Good
     var hello1 = 1,
         hello2 = 1,
-	    world1 = 1,
-	    world2 = 1;
+        world1 = 1,
+        world2 = 1;
     
     //example2
 
     //Bad
     var hello1 = 1,
         hello2 = 1,
-	    world1 = 1,
-	    world2 = 1;
+        world1 = 1,
+        world2 = 1;
     
     hello1++;
     hello2++;
@@ -354,8 +354,8 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     //Good
     var hello1 = 1,
         hello2 = 1,
-	    world1 = 1,
-	    world2 = 1;
+        world1 = 1,
+        world2 = 1;
     
     hello1++;
     hello2++;
@@ -370,29 +370,29 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 
     //Good
     var helloWorld = [
-	    'helloWorld1',
-	    'helloWorld2',
-	    'helloWorld3',
-	    'helloWorld4',
-	    'helloWorld5',
-	    'helloWorld6',
-	    'helloWorld7',
-	    'helloWorld8',
-	    'helloWorld9',
-	    'helloWorld10'
+        'helloWorld1',
+        'helloWorld2',
+        'helloWorld3',
+        'helloWorld4',
+        'helloWorld5',
+        'helloWorld6',
+        'helloWorld7',
+        'helloWorld8',
+        'helloWorld9',
+        'helloWorld10'
     ];
 
     //Good
     var helloWorld = ['helloWorld1',
-		              'helloWorld2',
-		              'helloWorld3',
-		              'helloWorld4',
-		              'helloWorld5',
-		              'helloWorld6',
-		              'helloWorld7',
-		              'helloWorld8',
-		              'helloWorld9',
-		              'helloWorld10'];
+                      'helloWorld2',
+                      'helloWorld3',
+                      'helloWorld4',
+                      'helloWorld5',
+                      'helloWorld6',
+                      'helloWorld7',
+                      'helloWorld8',
+                      'helloWorld9',
+                      'helloWorld10'];
     
     //example4
 
@@ -402,28 +402,28 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     //Good
     var helloWorld = {
         hello1 : 'world1',
-	    hello2 : 'world2',
-	    hello3 : 'world3',
-	    hello4 : 'world4',
-	    hello5 : 'world5',
-	    hello6 : 'world6',
-	    hello7 : 'world7',
-	    hello8 : 'world8',
-	    hello9 : 'world9',
-	    hello10 : 'world10'
+        hello2 : 'world2',
+        hello3 : 'world3',
+        hello4 : 'world4',
+        hello5 : 'world5',
+        hello6 : 'world6',
+        hello7 : 'world7',
+        hello8 : 'world8',
+        hello9 : 'world9',
+        hello10 : 'world10'
     };
 
     //Good
     var helloWorld = {hello1 : 'world1',
                       hello2 : 'world2',
-		              hello3 : 'world3',
-		              hello4 : 'world4',
-		              hello5 : 'world5',
-		              hello6 : 'world6',
-		              hello7 : 'world7',
-		              hello8 : 'world8',
-		              hello9 : 'world9',
-		              hello10 : 'world10'};
+                      hello3 : 'world3',
+                      hello4 : 'world4',
+                      hello5 : 'world5',
+                      hello6 : 'world6',
+                      hello7 : 'world7',
+                      hello8 : 'world8',
+                      hello9 : 'world9',
+                      hello10 : 'world10'};
     
 ````
 
@@ -435,14 +435,14 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 ````
     //Bad
     function helloWorld(nm,say) {
-	    return nm + ' : ' + say;
+        return nm + ' : ' + say;
     }
     
     helloWorld('권정현','이건 자바스크립트 가이드야');
 
     //Good
     function helloWorld(nm, say) {
-	    return nm + ' : ' + say;
+        return nm + ' : ' + say;
     }
     
     helloWorld('권정현', '이건 자바스크립트 가이드야');
@@ -546,14 +546,14 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var newHelloWorld = new helloWorld();
 
     function helloworld() {
-	    this.helloWorld = 'helloWorld';
+        this.helloWorld = 'helloWorld';
     }
     
     //Good
     var newHelloWorld = new HelloWorld();
 
     function Helloworld() {
-	    this.helloWorld = 'helloWorld';
+        this.helloWorld = 'helloWorld';
     }
 ````
 #### 축약
@@ -706,7 +706,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     if(hello) {
         world = 'world';
 
-	    hello += world;
+        hello += world;
     }
 
     //Good
@@ -715,7 +715,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     if(hello) {
         var world = 'world';
 
-	    hello += world;
+        hello += world;
     }
     
     //example2
@@ -726,7 +726,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     if(hello) {
         var world = 'world';
     }else{
-	    var world = undefined;
+        var world = undefined;
     }
 
     //Good
@@ -754,40 +754,40 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     //Bad
     function helloWorld(say) {
-	    var result = say;
+        var result = say;
 
-	    if(!result) {
-	        result = 'helloWorld';
-	    }
+        if(!result) {
+            result = 'helloWorld';
+        }
 
-	    return result;
+        return result;
     }
 
     //Good
     function helloWorld(say) {
-	    var result = say || 'helloWorld';
+        var result = say || 'helloWorld';
 
-	    return result;
+        return result;
     }
     
     //example2
     
     //Bad
     function helloWorld(say) {
-	    var result = say;
+        var result = say;
 
-	    if(!result) {
-	        result = false;
-	    }
+        if(!result) {
+            result = false;
+        }
 
-	    return result;
+        return result;
     }
 
     //Good
     function helloWorld(say) {
-	    var result = say && false;
+        var result = say && false;
 
-	    return result;
+        return result;
     }
 ````
 
@@ -797,7 +797,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     var helloWorld = 'helloWorld';
 
     for(var i = 0; i < helloWorld.length; i++) {
-	    //내용
+        //내용
     }
 
     //Good
@@ -805,14 +805,14 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         helloWorldCount = helloWorld.length;
 
     for(var i = 0; i < helloWorldCount; i++) {
-	    //내용
+        //내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
     for(var i = 0, helloWorldCount = helloWorld.length; i < helloWorldCount; i++) {
-	    //내용
+        //내용
     }
 ````
 
@@ -870,13 +870,13 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         var result = {};
 
         if(typeof object === "object" && object.constructor === Object) {
-	        for(var i in object) {
-		        if(object.hasOwnProperty(i)) {
-		            result[i] = copyObject(object[i]);
-		        }
-	        }
+            for(var i in object) {
+                if(object.hasOwnProperty(i)) {
+                    result[i] = copyObject(object[i]);
+                }
+            }
         }else{
-	        result = object;
+            result = object;
         }
 
         return result;
@@ -891,13 +891,13 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
      * @return {*}
      */
     function copyObject(object) {
-	    var result = object;
+        var result = object;
 
         if(typeof result === "object" && result.constructor === Object) {
-	        result = $.extend(true, {}, result);
-	    }
+            result = $.extend(true, {}, result);
+        }
 
-	    return result;
+        return result;
     }
 ````
 
@@ -933,16 +933,16 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     //Bad
     var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
         helloWorldCount = helloWorld.length,
-	    newHelloWorld = [];
+        newHelloWorld = [];
 
     for(var i = 0; i < helloWorldCount; i++) {
-	    newHelloWorld.push(helloWorld[i]);
+        newHelloWorld.push(helloWorld[i]);
     }
 
     //Good
     var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
         helloWorldCount = helloWorld.length,
-	    newHelloWorld = helloWorld.slice();
+        newHelloWorld = helloWorld.slice();
 ````
 
 ## 문자
@@ -1024,23 +1024,23 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 ````
     //Bad
     var helloWorld = function() {
-	    //내용
+        //내용
     };
 
     //Good
     function helloWorld() {
-	    //내용
+        //내용
     }
 ````
 
 즉시실행함수는 이 구문을 사용합니다.
 ````
     (function() {
-	    //내용
+        //내용
     })();
 
     (function() {
-	   //내용
+       //내용
     }());
 ````
 
@@ -1062,10 +1062,10 @@ result변수에 담아서 한번만 반환합니다.
     //Bad
     function helloWorld(say) {
         if(say === 'hello') {
-	        return true;
-	    }else if(say === 'world') {
-	        return false;
-	    }
+            return true;
+        }else if(say === 'world') {
+            return false;
+        }
     }
 
     //Bad
@@ -1073,14 +1073,14 @@ result변수에 담아서 한번만 반환합니다.
         var result;
 
         if(say === 'hello') {
-	        result = true;
+            result = true;
 
-	        return result;
-	    }else if(say === 'world') {
-	        result = false;
+            return result;
+        }else if(say === 'world') {
+            result = false;
 
-	        return result;
-	    }
+            return result;
+        }
     }
 
     //Good
@@ -1088,12 +1088,12 @@ result변수에 담아서 한번만 반환합니다.
         var result;
 
         if(say === 'hello') {
-	        result = true;
-	    }else if(say === 'world') {
-	        result = false;
-	    }
+            result = true;
+        }else if(say === 'world') {
+            result = false;
+        }
 
-	    return result;
+        return result;
     }
 ````
 
@@ -1102,7 +1102,7 @@ result변수에 담아서 한번만 반환합니다.
     //Bad
     function helloWorld(say) {
         var result = eval(hello + say),
-	        hello = 'hello';
+            hello = 'hello';
 
         return result;
     }
@@ -1112,14 +1112,14 @@ result변수에 담아서 한번만 반환합니다.
         var result;
 
         try {
-	        result = eval(hello + say);
-	    }catch(e) {
-	        result = say;
-	    }finally{
-	        console.log('끝났다.');
-	    }
+            result = eval(hello + say);
+        }catch(e) {
+            result = say;
+        }finally{
+            console.log('끝났다.');
+        }
         
-	    var hello = 'hello';
+        var hello = 'hello';
 
         return result;
     }
@@ -1130,8 +1130,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     //Bad
     try {
         function helloWorld(say) {
-	        return say;
-	    }
+            return say;
+        }
     }catch(e) {
         console.error(e);
     }
@@ -1139,8 +1139,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     //Bad
     try {
         this.helloWorld = function(say) {
-	        return say;
-	    };
+            return say;
+        };
     }catch(e) {
         console.error(e);
     }
@@ -1148,8 +1148,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     //Good
     try {
         window.helloWorld = function(say) {
-	        return say;
-	    };
+            return say;
+        };
     }catch(e) {
         console.error(e);
     }
@@ -1206,25 +1206,25 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
         for(var i = 0, consoleMethodLength = console.method.length; i < consoleMethodLength; i++) {
             if(typeof window.console[window.console.method[i]] !== 'function') {
                 window.console[window.console.method[i]] = function(comment) {
-		            var result,
-		                argumentsLength = arguments.length;
+                    var result,
+                        argumentsLength = arguments.length;
 
-		            if(argumentsLength > 1) {
-		                result = [];
+                    if(argumentsLength > 1) {
+                        result = [];
 
-		                for(var i = 0; i < argumentsLength; i++) {
-		                    result.push(arguments[i]);
-		                }
-		            }else if(argumentsLength === 1) {
-		                result = arguments[0];
-		            }
+                        for(var i = 0; i < argumentsLength; i++) {
+                            result.push(arguments[i]);
+                        }
+                    }else if(argumentsLength === 1) {
+                        result = arguments[0];
+                    }
 
 
-		            if(argumentsLength) {
-		                this.comment.push(result);
-		            }
+                    if(argumentsLength) {
+                        this.comment.push(result);
+                    }
 
-		            return result;
+                    return result;
                 };
             }
         }
@@ -1306,7 +1306,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     try {
         if(typeof window.jQuery === 'function') {
             (function($) {
-		        //내용
+                //내용
             })(jQuery);
         }else{
             throw '제이쿼리가 없습니다.';
