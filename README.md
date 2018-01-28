@@ -1226,7 +1226,6 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
                 result = 'document';
             }else if(result.substr(-7) === 'element') {
                 result = 'element';
-
             }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
                 var iCount = 0;
 
