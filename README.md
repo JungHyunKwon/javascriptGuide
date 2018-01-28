@@ -600,8 +600,10 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         world = 'world';
 ````
 
-필요한 구문에서 변수할당합니다.
+필요한 구문에서 변수할당하며 중복된 변수명은 상단에 선언합니다.
 ````
+    //example1
+    
     //Bad
     var hello = 'hello',
         world = undefined;
@@ -619,6 +621,25 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         var world = 'world';
 
 	hello += world;
+    }
+    
+    //example2
+
+    //Bad
+    var hello = 'hello';
+
+    if(hello) {
+        var world = 'world';
+    }else{
+	var world = undefined;
+    }
+
+    //Good
+    var hello = 'hello',
+        world;
+
+    if(hello) {
+        world = 'world';
     }
 ````
 
@@ -687,6 +708,13 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
         helloWorldCount = helloWorld.length;
 
     for(var i = 0; i < helloWorldCount; i++) {
+	//statement
+    }
+
+    //Good
+    var helloWorld = 'helloWorld';
+
+    for(var i = 0, helloWorldCount = helloWorld.length; i < helloWorldCount; i++) {
 	//statement
     }
 ````
@@ -862,23 +890,29 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     body.style.backgroundColor = '#000';
 ````
 
-result변수에 담아서 반환합니다.
+result변수에 담아서 한번만 반환합니다.
 ````
     //Bad
     function helloWorld(say) {
-        return 'hello' + say;
+        if(say === 'hello') {
+	    return true;
+	}else if(say === 'world') {
+	    return false;
+	}
     }
-    
-    helloWorld('World');
 
     //Good
     function helloWorld(say) {
-        var result = 'hello' + say;
+        var result;
+
+        if(say === 'hello') {
+	    result = true;
+	}else if(say === 'world') {
+	    result = false;
+	}
 
 	return result;
     }
-
-    helloWorld('World');
 ````
 
 오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[}]뒤에 catch또는 finally가 붙어야됩니다.
