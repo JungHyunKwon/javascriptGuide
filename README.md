@@ -1223,7 +1223,12 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 		        result = arguments[0];
 		    }
 
-		    return this.comment.push(result);
+
+		    if(argumentsLength) {
+		        this.comment.push(result);
+		    }
+
+		    return result;
                 };
             }
         }
