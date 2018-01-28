@@ -841,6 +841,51 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     };
 ````
 
+객체를 복사할때 이 함수를 사용한다
+````
+    /**
+     * @name 자바스크립트 객체복사
+     * @author JungHyunKwon
+     * @since 2018-01-28
+     * @version 1.0
+     * @param {object} object
+     * @return {*}
+     */
+    function copyObject(object) {
+        var result = {};
+
+        if(typeof object === "object" && object.constructor === Object) {
+	    for(var i in object) {
+		if(object.hasOwnProperty(i)) {
+		    result[i] = copyObject(object[i]);
+		}
+	    }
+        }else{
+	    result = object;
+        }
+
+        return result;
+    }
+
+    /**
+     * @name 제이쿼리 객체복사
+     * @author JungHyunKwon
+     * @since 2018-01-28
+     * @version 1.0
+     * @param {object} object
+     * @return {*}
+     */
+    function copyObject(object) {
+	var result = object;
+
+        if(typeof result === "object" && result.constructor === Object) {
+	    result = $.extend(true, {}, result);
+	}
+
+	return result;
+    }
+````
+
 ## 배열
 
 리터럴 구문을 사용합니다.
