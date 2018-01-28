@@ -494,9 +494,14 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     }
 ````
 #### 용어
-* nm : name
-* fn : function
-* i ~ z : 루프 변수
+
+축약 전 이름 | 축악 후 이름 | 설명
+| :------- | :------- | :-- |
+name | nm | 이름
+fn | function | 함수
+temp | tmp | 임시
+result | rst | 결과
+global | g | 전역
 
 #### 규칙
 * 명사 + 명사
@@ -716,6 +721,25 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     for(var i = 0, helloWorldCount = helloWorld.length; i < helloWorldCount; i++) {
 	//statement
+    }
+````
+
+i ~ z까지는 루프변수이며 i부터 시작합니다.
+````
+    //Bad
+    var helloWorld = 'helloWorld',
+        helloWorldCount = helloWorld.length;
+
+    for(var a = 0; a < helloWorldCount; a++) {
+        //statement
+    }
+
+    //Good
+    var helloWorld = 'helloWorld',
+        helloWorldCount = helloWorld.length;
+
+    for(var i = 0; i < helloWorldCount; i++) {
+        //statement
     }
 ````
 
