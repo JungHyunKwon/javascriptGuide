@@ -1210,34 +1210,23 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      * @param {*} value
      * @return {string}
      */
-    function _getTypeof(value) {
+    function getTypeof(value) {
         var result = 'none';
 
-        //매개변수가 있을때
         if(arguments.length) {
             result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 
-            //undefined일때(ie7, ie8에서 찾지 못함)
             if(value === undefined) {
                 result = 'undefined';
-
-            //NaN일때(숫자로 처리되서 따로 처리함)
             }else if(result === 'number' && isNaN(value)) {
                 result = 'NaN';
-
-            //Infinity일때(숫자로 처리되서 따로 처리함)
             }else if(result === 'number' && !isFinite(value)) {
-            result = 'Infinity';
-
-            //document일때
+                result = 'Infinity';
             }else if(result.substr(-8) === 'document') {
-            result = 'document';
-
-            //엘리먼트일때
+                result = 'document';
             }else if(result.substr(-7) === 'element') {
-            result = 'element';
+                result = 'element';
 
-            //제이쿼리 객체일때
             }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
                 var iCount = 0;
 
@@ -1246,21 +1235,16 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
                     if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
                         iCount++;
-                    }
                 }
-
-            if(value.length && value.length === iCount) {
-                result = 'jQueryElement';
-            }else{
-                result = 'jQueryObject';
-            }
-
-            //Invalid Date일때
+                
+                if(value.length && value.length === iCount) {
+                    result = 'jQueryElement';
+                }else{
+                    result = 'jQueryObject';
+                }
             }else if(result === 'date' && isNaN(new Date(value))) {
                 result = 'Invalid Date';
-
-            //class일때
-            }else if(result === 'function' && /^class\s/.test(Function.prototype.toString.call(value))) {
+            }else if(result === 'function' && /^class\s/.test(value.toString())) {
                 result = 'class';
             }
         }
@@ -1280,9 +1264,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 제이쿼리 작성할때 이 구문을 사용합니다.
 ````
     try {
-        //제이쿼리가 있는지 확인
         if(typeof window.jQuery === 'function') {
-            //$ 중첩 방지
             (function($) {
 		$.tag = $.tag || {
 		    wdw : $(window),
