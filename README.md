@@ -546,6 +546,16 @@ js파일 또는 스크립트 태그 'use strict' 다음에 작성바랍니다.
 	this.helloWorld = 'helloWorld';
     }
 ````
+#### 축약
+이름이 너무길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약어를 제공하거나 누구나 알아볼 수 있어야 됩니다. 
+````
+    //before
+    var functionType = typeof function() {};
+
+    //after
+    var fnType = typeof function() {};
+````
+
 #### 용어
 
 이름 | 축악 후 이름 | 설명
@@ -580,16 +590,6 @@ i ~ z | | 루프 변수
 
 #### 금지단어
 <https://www.w3schools.com/js/js_reserved.asp>를 피해서 작성해야 합니다.
-
-#### 축약
-이름이 너무길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약어를 제공하거나 누구나 알아볼 수 있어야 됩니다. 
-````
-    //before
-    var functionType = typeof function() {};
-
-    //after
-    var fnType = typeof function() {};
-````
 
 ### 생략
 
