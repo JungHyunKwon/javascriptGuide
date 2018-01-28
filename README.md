@@ -452,6 +452,24 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var HELLO_WORLD = 'helloWorld';
 ````
 
+객체내에서는 상수를 사용하지 않습니다.
+````
+    //Bad
+    var hello = {
+        WORLD : 'world'
+    };
+
+    //Good
+    var hello = {
+        world : 'world'
+    };
+
+    //Good
+    var hello = {
+        _world : 'world'
+    };
+````
+
 #### 은닉
 변수에 할당된 값을 변경하지 말자는 약속이며 맨앞에 언더스코어를 붙여 작성합니다.
 
@@ -1012,6 +1030,15 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     //Bad
     try {
         function helloWorld(say) {
+	    return say;
+	}
+    }catch(e) {
+        console.error(e);
+    }
+
+    //Bad
+    try {
+        this.helloWorld(say) {
 	    return say;
 	}
     }catch(e) {
