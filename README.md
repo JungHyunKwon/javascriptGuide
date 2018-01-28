@@ -452,26 +452,45 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var HELLO_WORLD = 'helloWorld';
 ````
 
-객체이름과 프로퍼티명은 상수를 사용하지 않습니다.
+객체, 배열, 객체에 프로퍼티 이름은 상수를 사용하지 않습니다.
 ````
+    //example1
+
+    //Bad
+    var HELLO = {};
+
+    //Good
+    var HELLO = {};
+
+    //Good
+    var _hello = {};
+
+    //example2
+
+    //Bad
+    var HELLO = [];
+
+    //Good
+    var hello = [];
+
+    //Good
+    var _hello = [];
+
+    //example3
+
     //Bad
     var hello = {
         WORLD : 'world'
     };
 
-    //Bad
-    var HELLO = {
-        world : 'world'
-    };
-
-    //Good
-    var hello = {
-        world : 'world'
-    };
-
     //Good
     var hello = {
         _world : 'world'
+    };
+
+    //Good
+    var hello = {
+        world : 'world'
     };
 ````
 
