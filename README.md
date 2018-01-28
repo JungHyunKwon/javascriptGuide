@@ -593,6 +593,7 @@ all | a | 모든
 button | btn | 버튼
 mobile | m | 모바일
 arguments | args | 인자
+message | msg | 메세지
 
 루프변수는 i부터 시작합니다.
 
