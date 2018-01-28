@@ -1159,8 +1159,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     /**
      * @name 콘솔오류방지
      * @author JungHyunKwon
-     * @version 1.0
      * @description 대체콘솔은 console.comment입니다.
+     * @version 1.0
      * @since 2018-01-28
      */
     if(window.console.constructor !== Object) {
