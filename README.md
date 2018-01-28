@@ -1441,7 +1441,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     $(function() {
         console.log(2);
         
-        //외부자원 img, iframe, script, css, js...
+        //외부자원(img, iframe, script, css, js...)
         $('img').on('load', function(event) {
             console.log(4);
         });
