@@ -1230,7 +1230,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
                 var iCount = 0;
 
                 for(var i in value) {
-                    var iType = _getTypeof(value[i]);
+                    var iType = getTypeof(value[i]);
 
                     if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
                         iCount++;
