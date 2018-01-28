@@ -779,6 +779,15 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }
 ````
 
+제이쿼리 엘리먼트 변수는 $로 시작합니다.
+````
+    //Bad
+    var body = $('body');
+
+    //Good
+    var $body = $('body');
+````
+
 ## 객체
 
 리터럴 구문을 사용합니다.
@@ -962,7 +971,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }());
 ````
 
-함수호출을 줄입시다.
+다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
 ````
     //Bad
     document.getElementsByTagName('body')[0].style.color = '#fff';
@@ -1090,57 +1099,6 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 * 동사 + 형용사 + 명사
 * 동사 + 명사 + 전치사 + 명사
 * 명사
-
-## 제이쿼리
-
-제이쿼리 엘리먼트 변수는 $로 시작합니다.
-````
-    //Bad
-    var body = $('body');
-
-    //Good
-    var $body = $('body');
-````
-
-다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
-````
-    //example1
-
-    //Bad
-    $('body').addClass('hello');
-    $('body').addClass('world');
-
-    //Bad
-    var $body = $('body');
-
-    $body.addClass('hello');
-    $body.addClass('world');
-
-    //Bad
-    var $body = $('body');
-
-    $body.addClass('hello').addClass('world');
-
-    //Good
-    var $body = $('body');
-
-    $body.addClass('hello world');
-
-    //example2
-
-    //Bad
-    var $body = $('body');
-
-    $body.css('color', '#fff').css('background-color', '#000');
-
-    //Good
-    var $body = $('body');
-
-    $body.css({
-        color : '#fff',
-        backgroundColor : '#000'
-    });
-````
 
 ## 기준
 ecma-262 3rd edition, december 1999
