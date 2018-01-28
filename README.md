@@ -1266,16 +1266,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     try {
         if(typeof window.jQuery === 'function') {
             (function($) {
-		$.tag = $.tag || {
-		    wdw : $(window),
-		    dcmt : $(document),
-		    html : $('html')
-		};
-
-		$(function() {
-		    $.tag.head = $('head');
-		    $.tag.body = $('body');
-		});
+		//내용
             })(jQuery);
         }else{
             throw '제이쿼리가 없습니다.';
@@ -1283,6 +1274,17 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     }catch(e) {
         console.error(e);
     }
+````
+
+제이쿼리 엘리먼트는 $.tag에 정의하여 재사용합니다.
+````
+    //Bad
+    var $body = $('body');
+
+    //Good
+    $.tag = {
+        body : $('body')
+    };
 ````
 
 제이쿼리 엘리먼트 변수는 $로 시작합니다.
