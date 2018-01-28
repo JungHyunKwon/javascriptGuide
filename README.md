@@ -587,15 +587,17 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = 'helloWorld';
 ````
 
-초기화를 해줍니다. 예외가 있을경우 예외에 맞게 작성하면 됩니다.
+undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있을경우 예외에 맞게 작성하면 됩니다.
 ````
     //Bad
     var hello = 'hello',
         world;
+    
+    world = 'world';
 
     //Good
     var hello = 'hello',
-        world = undefined;
+        world = 'world';
 ````
 
 필요한 구문에서 변수할당합니다.
