@@ -259,6 +259,49 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     }
 ````
 
+특정값을 골라내야만 할때 빼고는 이 구문을 사용합니다.
+````
+    //example1
+
+    //Bad
+    var helloWorld = true;
+
+    if(helloWorld === true) {
+	//statement
+    }
+
+    //Good
+    var helloWorld = true;
+
+    if(helloWorld) {
+	//statement
+    }
+
+    //example2
+
+    //Bad
+    var helloWorld = false;
+
+    if(helloWorld === false) {
+	//statement
+    }
+
+    //Good
+    var helloWorld = false;
+
+    if(!helloWorld) {
+	//statement
+    }
+````
+
+아래값은 false에 해당하는 값이며 나머지값은 true입니다.
+
+* null
+* NaN
+* 0
+* 공백
+* undefined
+
 ### 개행
 가독성을위해 개행을 합니다.
 
@@ -410,7 +453,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 ````
 
 #### 은닉
-변수에 할당된 값을 변경하지 말자는 약속이며 맨앞에 언더스코어(_)를 붙여 작성합니다.
+변수에 할당된 값을 변경하지 말자는 약속이며 맨앞에 언더스코어를 붙여 작성합니다.
 
 ````
     //Bad
@@ -466,7 +509,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
 
 ### 생략
 
-중괄호를 생략하지 않습니다.
+중괄호[{}]를 생략하지 않습니다.
 ````
     //example1
 
@@ -497,7 +540,7 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     }
 ````
 
-한줄 if문에서 소괄호를 생략하지 않습니다.
+한줄 if문에서 소괄호[()]를 생략하지 않습니다.
 ````
     //Bad
     var helloWorld = 'helloWorld';
@@ -508,25 +551,6 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     var helloWorld = 'helloWorld';
 
     (helloWorld === 'helloWorld') ? true : false;
-````
-
-## length
-\#.length를 여러번 사용할때 변수에 담아 재사용합니다.
-````
-    //Bad
-    var helloWorld = 'helloWorld';
-
-    for(var i = 0; i < helloWorld.length; i++) {
-	//statement
-    }
-
-    //Good
-    var helloWorld = 'helloWorld',
-        helloWorldCount = helloWorld.length;
-
-    for(var i = 0; i < helloWorldCount; i++) {
-	//statement
-    }
 ````
 
 ## 변수선언
@@ -633,6 +657,24 @@ js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습�
     }
 
    helloWorld();
+````
+
+\#.length를 여러번 사용할때 변수에 담아 사용합니다.
+````
+    //Bad
+    var helloWorld = 'helloWorld';
+
+    for(var i = 0; i < helloWorld.length; i++) {
+	//statement
+    }
+
+    //Good
+    var helloWorld = 'helloWorld',
+        helloWorldCount = helloWorld.length;
+
+    for(var i = 0; i < helloWorldCount; i++) {
+	//statement
+    }
 ````
 
 ## 객체
