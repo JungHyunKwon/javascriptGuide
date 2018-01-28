@@ -1372,7 +1372,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     });
 ````
 
-trigger대신 triggerHandler를 사용합니다.
+필요한 경우 이외에 trigger대신 triggerHandler를 사용합니다.
 ````
     //Bad
     var $body = $('body');
@@ -1393,7 +1393,7 @@ trigger대신 triggerHandler를 사용합니다.
     $body.triggerHandler('click');
 ````
 
-전체 이벤트를 부르지말고 특정 이벤트만 불러 사용합니다.
+필요한 경우 이외에 전체 이벤트를 부르지말고 특정 이벤트만 불러 사용합니다.
 ````
     //Bad
     var $body = $('body');
