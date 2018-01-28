@@ -1152,6 +1152,25 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     throw '내용';
 ````
 
+제이쿼리 작성할때 이 구문을 사용합니다.
+````
+    'use strict';
+
+    try {
+        //제이쿼리가 있는지 확인
+        if(typeof window.jQuery === 'function') {
+            //$ 중첩 방지
+            (function($) {
+                //내용
+            })(jQuery);
+        }else{
+            throw '제이쿼리가 없습니다.';
+        }
+    }catch(e) {
+        console.error(e);
+    }
+````
+
 ### 규칙
 * 동사 + 명사
 * 동사 + 형용사 + 명사
