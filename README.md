@@ -548,9 +548,7 @@ js파일 또는 스크립트 태그 'use strict' 다음에 작성바랍니다.
 ````
 #### 용어
 
-##### 축약
-
-축약 전 이름 | 축악 후 이름 | 설명
+이름 | 축악 후 이름 | 설명
 | :------- | :------- | :-- |
 name | nm | 이름
 function | fn | 함수
@@ -563,14 +561,14 @@ length | len | 갯수
 array | arr | 배열
 object | obj | 객체
 value | val | 값
-
-##### 단어
-
-이름 | 설명
-| :-- | :-- |
-is | 있는지
-has | 가지고 있는지
-i ~ z | 루프 변수
+current | crt | 현재
+active | atv | 활성화
+actived | atvd | 활성화된
+prev | prv | 이전
+next | nxt | 다음
+is | | 있는지
+has | | 가지고 있는지
+i ~ z | | 루프 변수
 
 #### 규칙
 * 명사 + 명사
