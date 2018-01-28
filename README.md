@@ -869,7 +869,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     function copyObject(object) {
         var result = {};
 
-        if(typeof object === "object" && object.constructor === Object) {
+        if(object instanceof Object) {
             for(var i in object) {
                 if(object.hasOwnProperty(i)) {
                     result[i] = copyObject(object[i]);
@@ -893,7 +893,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     function copyObject(object) {
         var result = object;
 
-        if(typeof result === "object" && result.constructor === Object) {
+        if(result instanceof Object) {
             result = $.extend(true, {}, result);
         }
 
@@ -1176,7 +1176,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      * @version 1.0
      * @since 2018-01-28
      */
-    if(window.console.constructor !== Object) {
+    if(!window.console instanceof Object) {
         window.console = {
             method : ['assert',
                 'clear',
