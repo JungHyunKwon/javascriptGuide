@@ -1,4 +1,4 @@
-# 자바스크립트 가이드
+# 자바스크립트 가이드 v1.0
 이 문서는 일관성, 가독성, 유지보수 용이성을 위한 참고자료입니다.
 
 ## 기본
@@ -7,11 +7,7 @@
 js파일 또는 스크립트 태그 첫줄에 'use strict';를 반드시 적습니다.
 
 ### 작성자 주석
-js파일 또는 스크립트 태그 'use strict';에서 한줄개행 후 작성합니다.
-
 ````
-    'use strict';
-
     /**
      * @author 작업자
      * @since 연-월-일
@@ -592,6 +588,7 @@ i ~ l | | 루프변수
 all | a | 모든
 button | btn | 버튼
 mobile | m | 모바일
+arguments | args | 인자
 
 루프변수는 i부터 시작합니다.
 
@@ -870,7 +867,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
      * @author JungHyunKwon
      * @since 2018-01-28
      * @version 1.0
-     * @param {object} object
+     * @param {*} object
      * @return {*}
      */
     function copyObject(object) {
@@ -894,7 +891,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
      * @author JungHyunKwon
      * @since 2018-01-28
      * @version 1.0
-     * @param {object} object
+     * @param {*} object
      * @return {*}
      */
     function copyObject(object) {
@@ -1213,7 +1210,20 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
         for(var i = 0, consoleMethodLength = console.method.length; i < consoleMethodLength; i++) {
             if(typeof window.console[window.console.method[i]] !== 'function') {
                 window.console[window.console.method[i]] = function(comment) {
-                    this.comment.push(comment);
+		    var result,
+		        argumentsLength = arguments.length;
+
+		    if(argumentsLength > 1) {
+		        result = [];
+
+		        for(var i = 0; i < argumentsLength; i++) {
+		            result.push(arguments[i]);
+		        }
+		    }else if(argumentsLength === 1) {
+		        result = arguments[0];
+		    }
+
+		    return this.comment.push(result);
                 };
             }
         }
