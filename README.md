@@ -1297,7 +1297,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
     (2.js)
     $(function() {
-        $body.css('color', '#fff');
+        $body.css('color', '#fff'); //$body를 찾지못함.
     });
 
     //Good
