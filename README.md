@@ -575,6 +575,7 @@ function | fn | 함수
 temp | tmp | 임시
 result | rst | 결과
 global | g | 전역
+local | l | 지역
 index | idx | 인덱스
 count | cnt | 카운트
 length | len | 갯수
@@ -588,7 +589,7 @@ prev | prv | 이전
 next | nxt | 다.음
 is | | ~~인가?
 has | | 가지고 있는지
-i ~ l | | 루프변수
+i ~ z | | 루프변수
 all | a | 모든
 button | btn | 버튼
 mobile | m | 모바일
