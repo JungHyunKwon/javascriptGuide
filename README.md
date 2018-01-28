@@ -173,18 +173,26 @@ js파일 또는 스크립트 태그 'use strict' 다음에 작성바랍니다.
     //Bad
     var helloWorld = 'helloWorld'
 
-
     //Good
     var helloWorld = 'helloWorld';
 ````
 
-의미없는 세미콜론을 사용하지 않습니다.
+의미없는 세미콜론 및 문자를 사용하지 않습니다.
 ````
     //Bad
     ;function helloWorld() {
         //내용
     }
+    
+    //Bad
+    +function helloWorld() {
+        //내용
+    }
 
+    //Bad
+    !function helloWorld() {
+        //내용
+    }
 
     //Good
     function helloWorld() {
@@ -1424,6 +1432,28 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     });
 
     $body.triggerHandler('click.common');
+````
+
+제이쿼리 호출순서입니다.
+````
+    console.log(1);
+    
+    $(function() {
+        console.log(2);
+        
+        //외부자원 img, iframe, script, css, js...
+        $('img').on('load', function(event) {
+            console.log(4);
+        });
+    });
+
+    $(document).on('ready', function(event) {
+        console.log(3);
+    });
+    
+    $(window).on('load', function(event) {
+        console.log(5);
+    });
 ````
 
 ## 기준
