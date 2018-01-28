@@ -1159,6 +1159,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     /**
      * @name 콘솔오류방지
      * @author JungHyunKwon
+     * @version 1.0
      * @description 대체콘솔은 console.comment입니다.
      * @since 2018-01-28
      */
@@ -1205,6 +1206,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      * @name 형태얻기
      * @author JungHyunKwon
      * @since 2017-12-18
+     * @version 1.0
      * @param {*} value
      * @return {string}
      */
