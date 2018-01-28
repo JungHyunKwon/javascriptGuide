@@ -4,12 +4,14 @@
 ## 기본
 
 ### strict 모드
-js파일 또는 스크립트 태그 첫줄에 'use strict'를 반드시 적습니다.
+js파일 또는 스크립트 태그 첫줄에 'use strict';를 반드시 적습니다.
 
 ### 작성자 주석
-js파일 또는 스크립트 태그 'use strict' 두번개행 후 작성합니다.
+js파일 또는 스크립트 태그 'use strict';에서 한줄개행 후 작성합니다.
 
 ````
+    'use strict';
+
     /**
      * @author 작업자
      * @since 연-월-일
