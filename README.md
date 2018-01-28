@@ -1288,12 +1288,32 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 제이쿼리 엘리먼트는 $.tag에 정의하여 재사용합니다.
 ````
     //Bad
-    var $body = $('body');
+    (1.js)
+    $(function() {
+        var $body = $('body');
+
+        $body.css('background-color', '#000');
+    });
+
+    (2.js)
+    $(function() {
+        $body.css('color', '#fff');
+    });
 
     //Good
-    $.tag = {
-        body : $('body')
-    };
+    (1.js)
+    $(function() {
+        $.tag = {
+            body : $('body')
+        };
+
+        $.tag.body.css('background-color', '#000');
+    });
+
+    (2.js)
+    $(function() {
+        $.tag.body.css('color', '#fff');
+    });
 ````
 
 제이쿼리 엘리먼트 변수는 $로 시작합니다.
