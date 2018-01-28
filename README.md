@@ -928,7 +928,7 @@ result변수에 담아서 한번만 반환합니다.
     }
 ````
 
-오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[}]뒤에 catch또는 finally가 붙어야됩니다.
+오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[}]뒤에 catch또는 finally가 반드시 붙어야됩니다.
 ````
     //Bad
     function helloWorld(say) {
