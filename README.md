@@ -1322,6 +1322,28 @@ function getTypeof(value) {
 
 ## 제이쿼리
 
+제이쿼리 호출순서입니다.
+````javascript
+console.log(1);
+    
+$(function() {
+    console.log(2);
+    
+    //외부자원(img, iframe, script, css, js...)
+    $('img').on('load', function(event) {
+        console.log(4);
+    });
+});
+
+$(document).on('ready', function(event) {
+    console.log(3);
+});
+    
+$(window).on('load', function(event) {
+    console.log(5);
+});
+````
+
 제이쿼리 엘리먼트 변수는 $로 시작합니다.
 ````javascript
 //Bad
@@ -1506,28 +1528,6 @@ $body.on('click.main', function() {
 });
 
 $body.triggerHandler('click.common');
-````
-
-제이쿼리 호출순서입니다.
-````javascript
-console.log(1);
-    
-$(function() {
-    console.log(2);
-    
-    //외부자원(img, iframe, script, css, js...)
-    $('img').on('load', function(event) {
-        console.log(4);
-    });
-});
-
-$(document).on('ready', function(event) {
-    console.log(3);
-});
-    
-$(window).on('load', function(event) {
-    console.log(5);
-});
 ````
 
 ## 기준
