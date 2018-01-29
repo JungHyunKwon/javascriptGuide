@@ -45,7 +45,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 ````
 
 #### 중괄호
-소괄호 마침[)]이 끝나고 시작되는 중괄호 시작[{]되기전에 한칸 띄웁니다.
+소괄호 마침[ ) ]이 끝나고 시작되는 중괄호 시작[ { ]되기전에 한칸 띄웁니다.
 
 ````
     //example1
@@ -85,7 +85,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 ````
 
 #### 소괄호
-소괄호 시작[(]이전에 공백은 사용하지 않습니다.
+소괄호 시작[ ( ]이전에 공백은 사용하지 않습니다.
 
 ````
     //example1
@@ -203,7 +203,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 
 ````
 
-변수선언을 제외한 중괄호 마침[}]뒤에 세미콜론을 넣지 않습니다.
+변수선언을 제외한 중괄호 마침[ } ]뒤에 세미콜론을 넣지 않습니다.
 ````
     //Bad
     function helloWorld() {
@@ -618,7 +618,7 @@ message | msg | 메세지
 
 ### 생략
 
-중괄호[{}]를 생략하지 않습니다.
+중괄호[ {} ]를 생략하지 않습니다.
 ````
     //example1
 
@@ -649,7 +649,7 @@ message | msg | 메세지
     }
 ````
 
-한줄 if문에서 소괄호[()]를 생략하지 않습니다.
+한줄 if문에서 소괄호[ () ]를 생략하지 않습니다.
 ````
     //Bad
     var helloWorld = 'helloWorld';
@@ -1099,7 +1099,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     }
 ````
 
-오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[}]뒤에 catch또는 finally가 반드시 붙어야됩니다.
+오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[ } ]뒤에 catch또는 finally가 반드시 붙어야됩니다.
 ````
     //Bad
     function helloWorld(say) {
@@ -1179,7 +1179,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      * @since 2018-01-28
      */
     if(!window.console instanceof Object) {
-        window.console = {
+        console = {
             method : ['assert',
                 'clear',
                 'count',
@@ -1206,8 +1206,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
         };
 
         for(var i = 0, consoleMethodLength = console.method.length; i < consoleMethodLength; i++) {
-            if(typeof window.console[window.console.method[i]] !== 'function') {
-                window.console[window.console.method[i]] = function(comment) {
+            if(typeof console[console.method[i]] !== 'function') {
+                console[console.method[i]] = function(comment) {
                     var result,
                         argumentsLength = arguments.length;
 
