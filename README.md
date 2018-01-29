@@ -481,7 +481,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var HELLO = {};
 
     //Good
-    var HELLO = {};
+    var hello = {};
 
     //Good
     var _hello = {};
