@@ -1258,12 +1258,10 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
         for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
             if(typeof window.console[window.console.method[i]] !== 'function') {
                 window.console[window.console.method[i]] = function(comment) {
-                    var result,
+                    var result = [],
                         argumentsLength = arguments.length;
 
                     if(argumentsLength > 1) {
-                        result = [];
-
                         for(var i = 0; i < argumentsLength; i++) {
                             result.push(arguments[i]);
                         }
