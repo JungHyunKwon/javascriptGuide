@@ -54,32 +54,32 @@ var helloWorld = 'helloWorld';
 var helloWorld = 'helloWorld';
 
 if(helloWorld){
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld';
 
 if(helloWorld) {
-	//내용
+    //내용
 }
 
 //example2
 
 //Bad
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for(var i = 0; i < helloWorldLength; i++){
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 ````
 
@@ -93,32 +93,32 @@ for(var i = 0; i < helloWorldLength; i++) {
 var helloWorld = 'helloWorld';
 
 if (helloWorld) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld';
 
 if(helloWorld) {
-	//내용
+    //내용
 }
 
 //example2
 
 //Bad
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for (var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 ````
 
@@ -145,12 +145,12 @@ var helloWorld = 'helloWorld';
 
 //Bad
 var hello = {
-	world:'world'
+    world:'world'
 };
 
 //Good
 var hello = {
-	world : 'world'
+    world : 'world'
 };
 
 //example2
@@ -181,22 +181,22 @@ var helloWorld = 'helloWorld';
 ````javascript
 //Bad
 ;function helloWorld() {
-	//내용
+    //내용
 }
 
 //Bad
 +function helloWorld() {
-	//내용
+    //내용
 }
 
 //Bad
 !function helloWorld() {
-	//내용
+    //내용
 }
 
 //Good
 function helloWorld() {
-	//내용
+    //내용
 }
 ````
 
@@ -204,17 +204,17 @@ function helloWorld() {
 ````javascript
 //Bad
 function helloWorld() {
-	//내용
+    //내용
 };
 
 //Good
 function helloWorld() {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = function() {
-	//내용
+    //내용
 };
 ````
 
@@ -265,14 +265,14 @@ helloWorld += helloWorld;
 var helloWorld = 'helloWorld';
 
 if(helloWorld == 'helloWorld') {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld';
 
 if(helloWorld === 'helloWorld') {
-	//내용
+    //내용
 }
 ````
 
@@ -284,14 +284,14 @@ if(helloWorld === 'helloWorld') {
 var helloWorld = true;
 
 if(helloWorld === true) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = true;
 
 if(helloWorld) {
-	//내용
+    //내용
 }
 
 //example2
@@ -300,14 +300,14 @@ if(helloWorld) {
 var helloWorld = false;
 
 if(helloWorld === false) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = false;
 
 if(!helloWorld) {
-	//내용
+    //내용
 }
 ````
 
@@ -330,17 +330,17 @@ var hello1 = 1, hello2 = 1, world1 = 1, world2 = 1;
 
 //Good
 var hello1 = 1,
-	hello2 = 1,
-	world1 = 1,
-	world2 = 1;
+    hello2 = 1,
+    world1 = 1,
+    world2 = 1;
 
 //example2
 
 //Bad
 var hello1 = 1,
-	hello2 = 1,
-	world1 = 1,
-	world2 = 1;
+    hello2 = 1,
+    world1 = 1,
+    world2 = 1;
 
 hello1++;
 hello2++;
@@ -349,9 +349,9 @@ world2++;
 
 //Good
 var hello1 = 1,
-	hello2 = 1,
-	world1 = 1,
-	world2 = 1;
+    hello2 = 1,
+    world1 = 1,
+    world2 = 1;
 
 hello1++;
 hello2++;
@@ -366,29 +366,29 @@ var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3', 'helloWorld4', 'h
 
 //Good
 var helloWorld = [
-	'helloWorld1',
-	'helloWorld2',
-	'helloWorld3',
-	'helloWorld4',
-	'helloWorld5',
-	'helloWorld6',
-	'helloWorld7',
-	'helloWorld8',
-	'helloWorld9',
-	'helloWorld10'
+    'helloWorld1',
+    'helloWorld2',
+    'helloWorld3',
+    'helloWorld4',
+    'helloWorld5',
+    'helloWorld6',
+    'helloWorld7',
+    'helloWorld8',
+    'helloWorld9',
+    'helloWorld10'
 ];
 
 //Good
 var helloWorld = ['helloWorld1',
-				  'helloWorld2',
-				  'helloWorld3',
-				  'helloWorld4',
-				  'helloWorld5',
-				  'helloWorld6',
-				  'helloWorld7',
-				  'helloWorld8',
-				  'helloWorld9',
-				  'helloWorld10'];
+                  'helloWorld2',
+                  'helloWorld3',
+                  'helloWorld4',
+                  'helloWorld5',
+                  'helloWorld6',
+                  'helloWorld7',
+                  'helloWorld8',
+                  'helloWorld9',
+                  'helloWorld10'];
 
 //example4
 
@@ -397,29 +397,29 @@ var helloWorld = {hello1 : 'world1', hello2 : 'world2', hello3 : 'world3', hello
 
 //Good
 var helloWorld = {
-	hello1 : 'world1',
-	hello2 : 'world2',
-	hello3 : 'world3',
-	hello4 : 'world4',
-	hello5 : 'world5',
-	hello6 : 'world6',
-	hello7 : 'world7',
-	hello8 : 'world8',
-	hello9 : 'world9',
-	hello10 : 'world10'
+    hello1 : 'world1',
+    hello2 : 'world2',
+    hello3 : 'world3',
+    hello4 : 'world4',
+    hello5 : 'world5',
+    hello6 : 'world6',
+    hello7 : 'world7',
+    hello8 : 'world8',
+    hello9 : 'world9',
+    hello10 : 'world10'
 };
 
 //Good
 var helloWorld = {hello1 : 'world1',
-				  hello2 : 'world2',
-				  hello3 : 'world3',
-				  hello4 : 'world4',
-				  hello5 : 'world5',
-				  hello6 : 'world6',
-				  hello7 : 'world7',
-				  hello8 : 'world8',
-				  hello9 : 'world9',
-				  hello10 : 'world10'};
+                  hello2 : 'world2',
+                  hello3 : 'world3',
+                  hello4 : 'world4',
+                  hello5 : 'world5',
+                  hello6 : 'world6',
+                  hello7 : 'world7',
+                  hello8 : 'world8',
+                  hello9 : 'world9',
+                  hello10 : 'world10'};
 ````
 
 누가봐도 보기좋게 개행하면 어떻게 개행하던 상관없습니다.
@@ -430,12 +430,12 @@ var helloWorld = {hello1 : 'world1',
 ````javascript
 //Bad
 function helloWorld(nm,say) {
-	return nm + ' : ' + say;
+    return nm + ' : ' + say;
 }
 
 //Good
 function helloWorld(nm, say) {
-	return nm + ' : ' + say;
+    return nm + ' : ' + say;
 }
 ````
 
@@ -491,17 +491,17 @@ var _hello = [];
 
 //Bad
 var hello = {
-	WORLD : 'world'
+    WORLD : 'world'
 };
 
 //Good
 var hello = {
-	_world : 'world'
+    _world : 'world'
 };
 
 //Good
 var hello = {
-	world : 'world'
+    world : 'world'
 };
 ````
 
@@ -509,11 +509,11 @@ var hello = {
 ````javascript
 //Bad
  var HELLO_WORLD = 'helloWorld',
-	 HELLO_WORLD_LENGTH = 10;
+     HELLO_WORLD_LENGTH = 10;
 
 //Good
  var helloWorld = 'helloWorld',
-	 HELLO_WORLD_LENGTH = 10;
+     HELLO_WORLD_LENGTH = 10;
 ````
 
 #### 은닉(값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있음)
@@ -547,14 +547,14 @@ var HELLO_WORLD = 'helloWorld';
 var newHelloWorld = new helloWorld();
 
 function helloworld() {
-	this.helloWorld = 'helloWorld';
+    this.helloWorld = 'helloWorld';
 }
 
 //Good
 var newHelloWorld = new HelloWorld();
 
 function Helloworld() {
-	this.helloWorld = 'helloWorld';
+    this.helloWorld = 'helloWorld';
 }
 ````
 #### 축약
@@ -627,13 +627,13 @@ message | msg | 메세지
 var helloWorld = 'helloWorld';
 
 if(helloWorld)
-	helloWorld = 'helloWorld';
+    helloWorld = 'helloWorld';
 
 //Good
 var helloWorld = 'helloWorld';
 
 if(helloWorld) {
-	helloWorld = 'helloWorld';
+    helloWorld = 'helloWorld';
 }
 
 //example2
@@ -647,7 +647,7 @@ for(var i = 0; i < helloWorld; i++) //내용
 var helloWorld = 5;
 
 for(var i = 0; i < helloWorld; i++) {
-	//내용
+    //내용
 }
 ````
 
@@ -674,7 +674,7 @@ var world = 'world';
 
 //Good
 var hello = 'hello',
-	world = 'world';
+    world = 'world';
 ````
 
 선언 키워드 없이 변수 선언을 해서는 안됩니다.
@@ -690,13 +690,13 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 ````javascript
 //Bad
 var hello = 'hello',
-	world;
+    world;
 
 world = 'world';
 
 //Good
 var hello = 'hello',
-	world = 'world';
+    world = 'world';
 ````
 
 필요한 구문에서 변수할당하며 중복된 변수명은 상단에 선언합니다.
@@ -705,17 +705,17 @@ var hello = 'hello',
 
 //Bad
 var hello = 'hello',
-	world = undefined;
+    world = undefined;
 
 if(hello) {
-	world = 'world';
+    world = 'world';
 }
 
 //Good
 var hello = 'hello';
 
 if(hello) {
-	var world = 'world';
+    var world = 'world';
 }
 
 //example2
@@ -724,17 +724,17 @@ if(hello) {
 var hello = 'hello';
 
 if(hello) {
-	var world = 'world';
+    var world = 'world';
 }else{
-	var world = undefined;
+    var world = undefined;
 }
 
 //Good
 var hello = 'hello',
-	world;
+    world;
 
 if(hello) {
-	world = 'world';
+    world = 'world';
 }
 
 //example3
@@ -743,48 +743,48 @@ if(hello) {
 var helloWorld = 'helloWorld';
 
 for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 //Bad
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length,
-	i;
+    helloWorldLength = helloWorld.length,
+    i;
 
 for(i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 for(i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 ````
 
@@ -795,7 +795,7 @@ var hello = world = 'helloWorld';
 
 //Good
 var hello = 'helloWorld',
-	world = hello;
+    world = hello;
 ````
 
 값에 따라 바뀌는 변수일때 구문입니다.
@@ -804,40 +804,40 @@ var hello = 'helloWorld',
 
 //Bad
 function helloWorld(say) {
-	var result = say;
+    var result = say;
 
-	if(!result) {
-		result = 'helloWorld';
-	}
+    if(!result) {
+        result = 'helloWorld';
+    }
 
-	return result;
+    return result;
 }
 
 //Good
 function helloWorld(say) {
-	var result = say || 'helloWorld';
+    var result = say || 'helloWorld';
 
-	return result;
+    return result;
 }
 
 //example2
 
 //Bad
 function helloWorld(say) {
-	var result = say;
+    var result = say;
 
-	if(result) {
-		result = undefined;
-	}
+    if(result) {
+        result = undefined;
+    }
 
-	return result;
+    return result;
 }
 
 //Good
 function helloWorld(say) {
-	var result = say && undefined;
+    var result = say && undefined;
 
-	return result;
+    return result;
 }
 ````
 
@@ -847,22 +847,22 @@ function helloWorld(say) {
 var helloWorld = 'helloWorld';
 
 for(var i = 0; i < helloWorld.length; i++) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld',
-	helloWorldLength = helloWorld.length;
+    helloWorldLength = helloWorld.length;
 
 for(var i = 0; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 
 //Good
 var helloWorld = 'helloWorld';
 
 for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
-	//내용
+    //내용
 }
 ````
 
@@ -884,12 +884,12 @@ var helloWorld = {};
 ````javascript
 //Bad
 var hello = {
-	world : 'world',
+    world : 'world',
 };
 
 //Good
 var hello = {
-	world : 'world'
+    world : 'world'
 };
 ````
 
@@ -897,12 +897,12 @@ var hello = {
 ````javascript
 //Bad
 var hello = {
-	'world' : 'world'
+    'world' : 'world'
 };
 
 //Good
 var hello = {
-	world : 'world'
+    world : 'world'
 };
 ````
 
@@ -919,19 +919,19 @@ var hello = {
  * @return {*}
  */
 function copyObject(object) {
-	var result = {};
+    var result = {};
 
-	if(object instanceof Object) {
-		for(var i in object) {
-			if(object.hasOwnProperty(i)) {
-				result[i] = copyObject(object[i]);
-			}
-		}
-	}else{
-		result = object;
-	}
+    if(object instanceof Object) {
+        for(var i in object) {
+            if(object.hasOwnProperty(i)) {
+                result[i] = copyObject(object[i]);
+            }
+        }
+    }else{
+        result = object;
+    }
 
-	return result;
+    return result;
 }
 ````
 
@@ -966,17 +966,17 @@ helloWorld.push('helloWorld');
 ````javascript
 //Bad
 var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
-	helloWorldLength = helloWorld.length,
-	newHelloWorld = [];
+    helloWorldLength = helloWorld.length,
+    newHelloWorld = [];
 
 for(var i = 0; i < helloWorldLength; i++) {
-	newHelloWorld.push(helloWorld[i]);
+    newHelloWorld.push(helloWorld[i]);
 }
 
 //Good
 var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
-	helloWorldLength = helloWorld.length,
-	newHelloWorld = helloWorld.slice();
+    helloWorldLength = helloWorld.length,
+    newHelloWorld = helloWorld.slice();
 ````
 
 ## 문자
@@ -1058,19 +1058,19 @@ var helloWorld = true;
 ````javascript
 //Bad
 var helloWorld = function() {
-	//내용
+    //내용
 };
 
 //Good
 function helloWorld() {
-	//내용
+    //내용
 }
 ````
 
 즉시실행함수는 이 구문을 사용합니다.
 ````javascript
 (function() {
-	//내용
+    //내용
 })();
 
 (function() {
@@ -1095,39 +1095,39 @@ body.style.backgroundColor = '#000';
 ````javascript
 //Bad
 function helloWorld(say) {
-	if(say === 'hello') {
-		return true;
-	}else if(say === 'world') {
-		return false;
-	}
+    if(say === 'hello') {
+        return true;
+    }else if(say === 'world') {
+        return false;
+    }
 }
 
 //Bad
 function helloWorld(say) {
-	var result;
+    var result;
 
-	if(say === 'hello') {
-		result = true;
+    if(say === 'hello') {
+        result = true;
 
-		return result;
-	}else if(say === 'world') {
-		result = false;
+        return result;
+    }else if(say === 'world') {
+        result = false;
 
-		return result;
-	}
+        return result;
+    }
 }
 
 //Good
 function helloWorld(say) {
-	var result;
+    var result;
 
-	if(say === 'hello') {
-		result = true;
-	}else if(say === 'world') {
-		result = false;
-	}
+    if(say === 'hello') {
+        result = true;
+    }else if(say === 'world') {
+        result = false;
+    }
 
-	return result;
+    return result;
 }
 ````
 
@@ -1135,27 +1135,27 @@ function helloWorld(say) {
 ````javascript
 //Bad
 function helloWorld(say) {
-	var result = eval(hello + say),
-		hello = 'hello';
+    var result = eval(hello + say),
+        hello = 'hello';
 
-	return result;
+    return result;
 }
 
 //Good
 function helloWorld(say) {
-	var result;
+    var result;
 
-	try {
-		result = eval(hello + say);
-	}catch(e) {
-		result = say;
-	}finally{
-		console.log('끝났다.');
-	}
-	
-	var hello = 'hello';
+    try {
+        result = eval(hello + say);
+    }catch(e) {
+        result = say;
+    }finally{
+        console.log('끝났다.');
+    }
+    
+    var hello = 'hello';
 
-	return result;
+    return result;
 }
 ````
 
@@ -1163,29 +1163,29 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 ````javascript
 //Bad
 try {
-	function helloWorld(say) {
-		return say;
-	}
+    function helloWorld(say) {
+        return say;
+    }
 }catch(e) {
-	console.error(e);
+    console.error(e);
 }
 
 //Bad
 try {
-	this.helloWorld = function(say) {
-		return say;
-	};
+    this.helloWorld = function(say) {
+        return say;
+    };
 }catch(e) {
-	console.error(e);
+    console.error(e);
 }
 
 //Good
 try {
-	window.helloWorld = function(say) {
-		return say;
-	};
+    window.helloWorld = function(say) {
+        return say;
+    };
 }catch(e) {
-	console.error(e);
+    console.error(e);
 }
 ````
 
@@ -1205,57 +1205,57 @@ try {
  * @since 2018-01-28
  */
 if(!window.console instanceof Object) {
-	window.console = {
-		method : [
-		'assert',
-			'clear',
-			'count',
-			'debug',
-			'dir',
-			'dirxml',
-			'error',
-			'exception',
-			'group',
-			'groupCollapsed',
-			'groupEnd',
-			'info',
-			'log',
-			'markTimeline',
-			'profile',
-			'profileEnd',
-			'table',
-			'time',
-			'timeEnd',
-			'timeStamp',
-			'trace',
-			'warn'
-	],
-		comment : []
-	};
+    window.console = {
+        method : [
+        'assert',
+            'clear',
+            'count',
+            'debug',
+            'dir',
+            'dirxml',
+            'error',
+            'exception',
+            'group',
+            'groupCollapsed',
+            'groupEnd',
+            'info',
+            'log',
+            'markTimeline',
+            'profile',
+            'profileEnd',
+            'table',
+            'time',
+            'timeEnd',
+            'timeStamp',
+            'trace',
+            'warn'
+    ],
+        comment : []
+    };
 
-	for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
-		if(typeof window.console[window.console.method[i]] !== 'function') {
-			window.console[window.console.method[i]] = function() {
-				var result = [],
-					argumentsLength = arguments.length;
+    for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
+        if(typeof window.console[window.console.method[i]] !== 'function') {
+            window.console[window.console.method[i]] = function() {
+                var result = [],
+                    argumentsLength = arguments.length;
 
-				if(argumentsLength > 1) {
-					for(var i = 0; i < argumentsLength; i++) {
-						result.push(arguments[i]);
-					}
-				}else if(argumentsLength === 1) {
-					result = arguments[0];
-				}
+                if(argumentsLength > 1) {
+                    for(var i = 0; i < argumentsLength; i++) {
+                        result.push(arguments[i]);
+                    }
+                }else if(argumentsLength === 1) {
+                    result = arguments[0];
+                }
 
 
-				if(argumentsLength) {
-					this.comment.push(result);
-				}
+                if(argumentsLength) {
+                    this.comment.push(result);
+                }
 
-				return result;
-			};
-		}
-	}
+                return result;
+            };
+        }
+    }
 }
 ````
 
@@ -1272,45 +1272,45 @@ if(!window.console instanceof Object) {
  * @return {string}
  */
 function getTypeof(value) {
-	var result = 'none';
+    var result = 'none';
 
-	if(arguments.length) {
-		result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
+    if(arguments.length) {
+        result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 
-		if(value === undefined) {
-			result = 'undefined';
-		}else if(result === 'number' && isNaN(value)) {
-			result = 'NaN';
-		}else if(result === 'number' && !isFinite(value)) {
-			result = 'Infinity';
-		}else if(result.substr(-8) === 'document') {
-			result = 'document';
-		}else if(result.substr(-7) === 'element') {
-			result = 'element';
-		}else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
-			var iCount = 0;
+        if(value === undefined) {
+            result = 'undefined';
+        }else if(result === 'number' && isNaN(value)) {
+            result = 'NaN';
+        }else if(result === 'number' && !isFinite(value)) {
+            result = 'Infinity';
+        }else if(result.substr(-8) === 'document') {
+            result = 'document';
+        }else if(result.substr(-7) === 'element') {
+            result = 'element';
+        }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
+            var iCount = 0;
 
-			for(var i in value) {
-				var iType = getTypeof(value[i]);
+            for(var i in value) {
+                var iType = getTypeof(value[i]);
 
-				if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
-					iCount++;
-				}
-			}
+                if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
+                    iCount++;
+                }
+            }
 
-			if(value.length && value.length === iCount) {
-				result = 'jQueryElement';
-			}else{
-				result = 'jQueryObject';
-			}
-		}else if(result === 'date' && isNaN(new Date(value))) {
-			result = 'Invalid Date';
-		}else if(result === 'function' && /^class\s/.test(value.toString())) {
-			result = 'class';
-		}
-	}
+            if(value.length && value.length === iCount) {
+                result = 'jQueryElement';
+            }else{
+                result = 'jQueryObject';
+            }
+        }else if(result === 'date' && isNaN(new Date(value))) {
+            result = 'Invalid Date';
+        }else if(result === 'function' && /^class\s/.test(value.toString())) {
+            result = 'class';
+        }
+    }
 
-	return result;
+    return result;
 }
 ````
 
@@ -1334,15 +1334,15 @@ var $body = $('body');
 제이쿼리 작성할때 이 구문을 사용합니다.
 ````javascript
 try {
-	if(typeof window.jQuery === 'function') {
-		(function($) {
-			//내용
-		})(jQuery);
-	}else{
-		throw '제이쿼리가 없습니다.';
-	}
+    if(typeof window.jQuery === 'function') {
+        (function($) {
+            //내용
+        })(jQuery);
+    }else{
+        throw '제이쿼리가 없습니다.';
+    }
 }catch(e) {
-	console.error(e);
+    console.error(e);
 }
 ````
 
@@ -1352,30 +1352,30 @@ try {
 
 //1.js
 $(function() {
-	var $body = $('body');
+    var $body = $('body');
 
-	$body.css('background-color', '#000');
+    $body.css('background-color', '#000');
 });
 
 //2.js
 $(function() {
-	$body.css('color', '#fff'); //$body를 찾지못함.
+    $body.css('color', '#fff'); //$body를 찾지못함.
 });
 
 //Good
 
 //1.js
 $(function() {
-	$.tag = {
-		body : $('body')
-	};
+    $.tag = {
+        body : $('body')
+    };
 
-	$.tag.body.css('background-color', '#000');
+    $.tag.body.css('background-color', '#000');
 });
 
 //2.js
 $(function() {
-	$.tag.body.css('color', '#fff');
+    $.tag.body.css('color', '#fff');
 });
 ````
 
@@ -1414,8 +1414,8 @@ $body.css('color', '#fff').css('background-color', '#000');
 var $body = $('body');
 
 $body.css({
-	color : '#fff',
-	backgroundColor : '#000'
+    color : '#fff',
+    backgroundColor : '#000'
 });
 ````
 
@@ -1423,12 +1423,12 @@ $body.css({
 ````javascript
 //Bad
 $('body').on('click', function(event) {
-	//내용
+    //내용
 });
 
 //Good
 $('body').on('click.common', function(event) {
-	//내용
+    //내용
 });
 ````
 
@@ -1436,12 +1436,12 @@ $('body').on('click.common', function(event) {
 ````javascript
 //Bad
 $('body').click(function(event) {
-	//내용
+    //내용
 });
 
 //Good
 $('body').on('click', function(event) {
-	//내용
+    //내용
 });
 ````
 
@@ -1449,12 +1449,12 @@ $('body').on('click', function(event) {
 ````javascript
 //Bad
 $('body').on('click', function() {
-	//내용
+    //내용
 });
 
 //Good
 $('body').on('click', function(event) {
-	//내용
+    //내용
 });
 ````
 
@@ -1464,7 +1464,7 @@ $('body').on('click', function(event) {
 var $body = $('body');
 
 $body.on('click', function() {
-	//내용
+    //내용
 });
 
 $body.trigger('click');
@@ -1473,7 +1473,7 @@ $body.trigger('click');
 var $body = $('body');
 
 $body.on('click', function() {
-	//내용
+    //내용
 });
 
 $body.triggerHandler('click');
@@ -1485,11 +1485,11 @@ $body.triggerHandler('click');
 var $body = $('body');
 
 $body.on('click.common', function() {
-	console.log(1);
+    console.log(1);
 });
 
 $body.on('click.main', function() {
-	console.log(2);
+    console.log(2);
 });
 
 $body.triggerHandler('click');
@@ -1498,11 +1498,11 @@ $body.triggerHandler('click');
 var $body = $('body');
 
 $body.on('click.common', function() {
-	console.log(1);
+    console.log(1);
 });
 
 $body.on('click.main', function() {
-	console.log(2);
+    console.log(2);
 });
 
 $body.triggerHandler('click.common');
@@ -1513,20 +1513,20 @@ $body.triggerHandler('click.common');
 console.log(1);
     
 $(function() {
-	console.log(2);
-	
-	//외부자원(img, iframe, script, css, js...)
-	$('img').on('load', function(event) {
-		console.log(4);
-	});
+    console.log(2);
+    
+    //외부자원(img, iframe, script, css, js...)
+    $('img').on('load', function(event) {
+        console.log(4);
+    });
 });
 
 $(document).on('ready', function(event) {
-	console.log(3);
+    console.log(3);
 });
     
 $(window).on('load', function(event) {
-	console.log(5);
+    console.log(5);
 });
 ````
 
