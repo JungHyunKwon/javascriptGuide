@@ -636,7 +636,8 @@ message | msg | 메세지
     }
 
     //example2
-
+    
+    //Bad
     var helloWorld = 5;
 
     for(var i = 0; i < helloWorld; i++) //내용
