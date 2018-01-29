@@ -1217,7 +1217,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
 ````javascript
     
-    consoleFix.js
+    (consoleFix.js)
 
     /**
      * @name 콘솔오류방지
@@ -1286,7 +1286,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
     
-    getTypeof.js
+    (getTypeof.js)
 
     /**
      * @name 형태얻기
