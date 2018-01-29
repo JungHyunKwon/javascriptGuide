@@ -1210,7 +1210,7 @@ try {
 if(!window.console instanceof Object) {
     window.console = {
         method : [
-        'assert',
+            'assert',
             'clear',
             'count',
             'debug',
@@ -1232,7 +1232,7 @@ if(!window.console instanceof Object) {
             'timeStamp',
             'trace',
             'warn'
-    ],
+        ],
         comment : []
     };
 
