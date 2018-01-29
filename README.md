@@ -596,6 +596,9 @@ button | btn | 버튼
 mobile | m | 모바일
 arguments | args | 인자
 message | msg | 메세지
+string | str | 문자
+number | num | 숫자
+boolean | bool | 불리언
 
 루프변수는 i부터 시작합니다.
 
@@ -1037,7 +1040,7 @@ var helloWorld = Number(1);
 var helloWorld = 1;
 ````
 
-## 불린
+## 불리언
 형변환이 필요할때 빼고는 아래 구문을 이용합니다.
 
 ````javascript
