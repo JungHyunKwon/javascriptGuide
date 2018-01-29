@@ -464,7 +464,6 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 
 #### 상수(값이 변할 수 없음)
 * 상수표기는 전체 대문자 + 스네이크 표기법으로 작성합니다.
-* 상수는 필수가 아닙니다. 명시가 필요할때 사용합니다.
 
 ````javascript
     //Bad
@@ -514,6 +513,17 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var hello = {
         world : 'world'
     };
+````
+
+값이 변하지 않는다고 무조건 상수로 두지 않습니다. 이 값은 건드리면 안된다. 하는것을 상수로 표현합니다.
+````javascript
+    //Bad
+     var HELLO_WORLD = 'helloWorld',
+         HELLO_WORLD_LENGTH = 10;
+
+    //Good
+     var helloWorld = 'helloWorld',
+         HELLO_WORLD_LENGTH = 10;
 ````
 
 #### 은닉(값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있음)
