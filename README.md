@@ -165,7 +165,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     //Good
     var helloWorld = 'helloWorld';
 
-    (helloWorld === 'helloWorld')?true : false;
+    (helloWorld === 'helloWorld') ? true : false;
 ````
 
 #### 세미콜론
