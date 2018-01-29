@@ -1221,7 +1221,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      */
     if(!window.console instanceof Object) {
         window.console = {
-            method : ['assert',
+            method : [
+	        'assert',
                 'clear',
                 'count',
                 'debug',
@@ -1242,7 +1243,8 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
                 'timeEnd',
                 'timeStamp',
                 'trace',
-                'warn'],
+                'warn'
+	    ],
             comment : []
         };
 
@@ -1274,7 +1276,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
     }
 ````
 
-자세한 형태를 파악하고 싶다.면 아래함수를 사용합니다.
+자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
     /**
      * @name 형태얻기
