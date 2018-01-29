@@ -1211,7 +1211,13 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 ````
 
 에뮬레이션이 아닌 실제 인터넷익스플로러9이하에서 콘솔오류를 막으려면 아래 함수를 사용합니다.
+````html
+<!--[if lt IE 10]><script src="consoleFix.js"></script><![endif]-->
+
 ````javascript
+    
+    consoleFix.js
+
     /**
      * @name 콘솔오류방지
      * @author JungHyunKwon
@@ -1278,6 +1284,9 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
 자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
+    
+    getTypeof.js
+
     /**
      * @name 형태얻기
      * @author JungHyunKwon
