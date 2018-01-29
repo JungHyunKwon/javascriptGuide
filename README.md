@@ -1282,7 +1282,11 @@ function getTypeof(value) {
         }else if(result === 'number' && isNaN(value)) {
             result = 'NaN';
         }else if(result === 'number' && !isFinite(value)) {
-            result = 'Infinity';
+            if(value.toString() === "-Infinity") {
+                result = '-Infinity';
+            }else{
+                result = 'Infinity';
+            }
         }else if(result.substr(-8) === 'document') {
             result = 'document';
         }else if(result.substr(-7) === 'element') {
