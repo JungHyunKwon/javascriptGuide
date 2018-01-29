@@ -430,7 +430,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 누가봐도 보기좋게 개행하면 어떻게 개행하던 상관없습니다.
 
 #### 콤마
-콤마다.음은 한칸 띄웁니다. 개행했을때는 하지않습니다.
+콤마다음은 한칸 띄웁니다. 개행했을때는 하지않습니다.
 
 ````javascript
     //Bad
@@ -462,8 +462,9 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var helloWorld = 'helloWorld';
 ````
 
-#### 상수
-상수표기는 전체 대문자 + 스네이크 표기법으로 작성합니다.
+#### 상수(값이 변할 수 없음)
+* 상수표기는 전체 대문자 + 스네이크 표기법으로 작성합니다.
+* 상수는 필수가 아닙니다. 명시가 필요할때 사용합니다.
 
 ````javascript
     //Bad
@@ -515,7 +516,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     };
 ````
 
-#### 은닉
+#### 은닉(값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있음)
 변수에 할당된 값을 변경하지 말자는 약속이며 맨앞에 언더스코어를 붙여 작성합니다.
 
 ````javascript
@@ -526,7 +527,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     var _helloWorld = 'helloWorld';
 ````
 
-상수와 은닉은 섞어 사용하지 않습니다. 상수는 값이 변할 수 없다는 의미를 가지고 있고 은닉은 값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있는것입니다.
+상수와 은닉은 섞어 사용하지 않습니다.
 ````javascript
     //Bad
     var _HELLO_WORLD = 'helloWorld';
@@ -1257,7 +1258,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
 
         for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
             if(typeof window.console[window.console.method[i]] !== 'function') {
-                window.console[window.console.method[i]] = function(comment) {
+                window.console[window.console.method[i]] = function() {
                     var result = [],
                         argumentsLength = arguments.length;
 
