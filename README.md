@@ -1220,7 +1220,7 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
      * @since 2018-01-28
      */
     if(!window.console instanceof Object) {
-        console = {
+        window.console = {
             method : ['assert',
                 'clear',
                 'count',
@@ -1246,9 +1246,9 @@ try catch안에서의 전역함수는 익명함수로 작성합니다.
             comment : []
         };
 
-        for(var i = 0, consoleMethodLength = console.method.length; i < consoleMethodLength; i++) {
-            if(typeof console[console.method[i]] !== 'function') {
-                console[console.method[i]] = function(comment) {
+        for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
+            if(typeof window.console[window.console.method[i]] !== 'function') {
+                window.console[window.console.method[i]] = function(comment) {
                     var result,
                         argumentsLength = arguments.length;
 
