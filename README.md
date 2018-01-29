@@ -779,8 +779,8 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
     function helloWorld(say) {
         var result = say;
 
-        if(!result) {
-            result = false;
+        if(result) {
+            result = undefined;
         }
 
         return result;
@@ -788,7 +788,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     //Good
     function helloWorld(say) {
-        var result = say && false;
+        var result = say && undefined;
 
         return result;
     }
