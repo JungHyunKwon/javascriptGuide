@@ -68,17 +68,17 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
     
     //Bad
     var helloWorld = 'helloWorld',
-        helloWroldCount = helloWorld.length;
+        helloWorldLength = helloWorld.length;
 
-    for(var i = 0; i < helloWroldCount; i++){
+    for(var i = 0; i < helloWorldLength; i++){
         //내용
     }
     
     //Good
     var helloWorld = 'helloWorld',
-        helloWroldCount = helloWorld.length;
+        helloWorldLength = helloWorld.length;
 
-    for(var i = 0; i < helloWroldCount; i++) {
+    for(var i = 0; i < helloWorldLength; i++) {
         //내용
     }
 
@@ -108,17 +108,17 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 
     //Bad
     var helloWorld = 'helloWorld',
-        helloWroldCount = helloWorld.length;
+        helloWorldLength = helloWorld.length;
 
-    for (var i = 0; i < helloWroldCount; i++) {
+    for (var i = 0; i < helloWorldLength; i++) {
         //내용
     }
 
     //Good
     var helloWorld = 'helloWorld',
-        helloWroldCount = helloWorld.length;
+        helloWorldLength = helloWorld.length;
 
-    for(var i = 0; i < helloWroldCount; i++) {
+    for(var i = 0; i < helloWorldLength; i++) {
         //내용
     }
 
@@ -708,8 +708,6 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     if(hello) {
         world = 'world';
-
-        hello += world;
     }
 
     //Good
@@ -717,8 +715,6 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     if(hello) {
         var world = 'world';
-
-        hello += world;
     }
     
     //example2
@@ -738,6 +734,56 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     if(hello) {
         world = 'world';
+    }
+
+    //example3
+
+    //Bad
+    var helloWorld = 'helloWorld';
+
+    for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    //Bad
+    var helloWorld = 'helloWorld',
+        helloWorldLength = helloWorld.length;
+
+    for(var i = 0; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(var i = 0; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(var i = 0; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    //Good
+    var helloWorld = 'helloWorld',
+        helloWorldLength = helloWorld.length,
+        i;
+
+    for(i = 0; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(i = 0; i < helloWorldLength; i++) {
+        //내용
+    }
+
+    for(i = 0; i < helloWorldLength; i++) {
+        //내용
     }
 ````
 
@@ -805,16 +851,16 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 
     //Good
     var helloWorld = 'helloWorld',
-        helloWorldCount = helloWorld.length;
+        helloWorldLength = helloWorld.length;
 
-    for(var i = 0; i < helloWorldCount; i++) {
+    for(var i = 0; i < helloWorldLength; i++) {
         //내용
     }
 
     //Good
     var helloWorld = 'helloWorld';
 
-    for(var i = 0, helloWorldCount = helloWorld.length; i < helloWorldCount; i++) {
+    for(var i = 0, helloWorldLength = helloWorld.length; i < helloWorldLength; i++) {
         //내용
     }
 ````
@@ -929,16 +975,16 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
 ````javascript
     //Bad
     var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
-        helloWorldCount = helloWorld.length,
+        helloWorldLength = helloWorld.length,
         newHelloWorld = [];
 
-    for(var i = 0; i < helloWorldCount; i++) {
+    for(var i = 0; i < helloWorldLength; i++) {
         newHelloWorld.push(helloWorld[i]);
     }
 
     //Good
     var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
-        helloWorldCount = helloWorld.length,
+        helloWorldLength = helloWorld.length,
         newHelloWorld = helloWorld.slice();
 ````
 
