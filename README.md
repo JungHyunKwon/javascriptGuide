@@ -893,13 +893,7 @@ undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있�
      * @return {*}
      */
     function copyObject(object) {
-        var result = object;
-
-        if($.isPlainObject(result)) {
-            result = $.extend(true, {}, result);
-        }
-
-        return result;
+        return ($.isPlainObject(object)) ? $.extend(true, {}, object) : object;
     }
 ````
 
