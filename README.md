@@ -913,6 +913,8 @@ var hello = {
 ````javascript
 //copyObject.js
 
+'use strict';
+
 /**
  * @name 객체복사
  * @author JungHyunKwon
@@ -921,20 +923,24 @@ var hello = {
  * @param {*} object
  * @return {*}
  */
-function copyObject(object) {
-    var result = {};
+try {
+    function copyObject(object) {
+        var result = {};
 
-    if(object instanceof Object) {
-        for(var i in object) {
-            if(object.hasOwnProperty(i)) {
-                result[i] = copyObject(object[i]);
+        if(object instanceof Object) {
+            for(var i in object) {
+                if(object.hasOwnProperty(i)) {
+                    result[i] = copyObject(object[i]);
+                }
             }
+        }else{
+            result = object;
         }
-    }else{
-        result = object;
-    }
 
-    return result;
+        return result;
+    }
+}catch(e) {
+    console.error(e);
 }
 ````
 
@@ -1200,6 +1206,8 @@ try {
 ````javascript
 //consoleFix.js
 
+'use strict';
+
 /**
  * @name 콘솔오류방지
  * @author JungHyunKwon
@@ -1207,64 +1215,70 @@ try {
  * @version 1.0
  * @since 2018-01-28
  */
-if(!window.console instanceof Object) {
-    window.console = {
-        method : [
-            'assert',
-            'clear',
-            'count',
-            'debug',
-            'dir',
-            'dirxml',
-            'error',
-            'exception',
-            'group',
-            'groupCollapsed',
-            'groupEnd',
-            'info',
-            'log',
-            'markTimeline',
-            'profile',
-            'profileEnd',
-            'table',
-            'time',
-            'timeEnd',
-            'timeStamp',
-            'trace',
-            'warn'
-        ],
-        comment : []
-    };
+try {
+    if(!window.console instanceof Object) {
+        window.console = {
+            method : [
+                'assert',
+                'clear',
+                'count',
+                'debug',
+                'dir',
+                'dirxml',
+                'error',
+                'exception',
+                'group',
+                'groupCollapsed',
+                'groupEnd',
+                'info',
+                'log',
+                'markTimeline',
+                'profile',
+                'profileEnd',
+                'table',
+                'time',
+                'timeEnd',
+                'timeStamp',
+                'trace',
+                'warn'
+            ],
+            comment : []
+        };
 
-    for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
-        if(typeof window.console[window.console.method[i]] !== 'function') {
-            window.console[window.console.method[i]] = function() {
-                var result = [],
-                    argumentsLength = arguments.length;
+        for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
+            if(typeof window.console[window.console.method[i]] !== 'function') {
+                window.console[window.console.method[i]] = function() {
+                    var result = [],
+                        argumentsLength = arguments.length;
 
-                if(argumentsLength > 1) {
-                    for(var i = 0; i < argumentsLength; i++) {
-                        result.push(arguments[i]);
+                    if(argumentsLength > 1) {
+                        for(var i = 0; i < argumentsLength; i++) {
+                            result.push(arguments[i]);
+                        }
+                    }else if(argumentsLength === 1) {
+                        result = arguments[0];
                     }
-                }else if(argumentsLength === 1) {
-                    result = arguments[0];
-                }
 
 
-                if(argumentsLength) {
-                    this.comment.push(result);
-                }
+                    if(argumentsLength) {
+                        this.comment.push(result);
+                    }
 
-                return result;
-            };
+                    return result;
+                };
+            }
         }
     }
+}catch(e) {
+    console.error(e);
 }
 ````
 
 자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
 //getTypeof.js
+
+'use strict';
 
 /**
  * @name 형태얻기
@@ -1274,50 +1288,54 @@ if(!window.console instanceof Object) {
  * @param {*} value
  * @return {string}
  */
-function getTypeof(value) {
-    var result = 'none';
+try {
+    function getTypeof(value) {
+        var result = 'none';
 
-    if(arguments.length) {
-        result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
+        if(arguments.length) {
+            result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 
-        if(value === undefined) {
-            result = 'undefined';
-        }else if(result === 'number' && isNaN(value)) {
-            result = 'NaN';
-        }else if(result === 'number' && !isFinite(value)) {
-            if(value.toString() === '-Infinity') {
-                result = '-Infinity';
-            }else{
-                result = 'Infinity';
-            }
-        }else if(result.substr(-8) === 'document') {
-            result = 'document';
-        }else if(result.substr(-7) === 'element') {
-            result = 'element';
-        }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
-            var iCount = 0;
-
-            for(var i in value) {
-                var iType = getTypeof(value[i]);
-
-                if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
-                    iCount++;
+            if(value === undefined) {
+                result = 'undefined';
+            }else if(result === 'number' && isNaN(value)) {
+                result = 'NaN';
+            }else if(result === 'number' && !isFinite(value)) {
+                if(value.toString() === '-Infinity') {
+                    result = '-Infinity';
+                }else{
+                    result = 'Infinity';
                 }
-            }
+            }else if(result.substr(-8) === 'document') {
+                result = 'document';
+            }else if(result.substr(-7) === 'element') {
+                result = 'element';
+            }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
+                var iCount = 0;
 
-            if(value.length && value.length === iCount) {
-                result = 'jQueryElement';
-            }else{
-                result = 'jQueryObject';
+                for(var i in value) {
+                    var iType = getTypeof(value[i]);
+
+                    if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
+                        iCount++;
+                    }
+                }
+
+                if(value.length && value.length === iCount) {
+                    result = 'jQueryElement';
+                }else{
+                    result = 'jQueryObject';
+                }
+            }else if(result === 'date' && isNaN(new Date(value))) {
+                result = 'Invalid Date';
+            }else if(result === 'function' && /^class\s/.test(value.toString())) {
+                result = 'class';
             }
-        }else if(result === 'date' && isNaN(new Date(value))) {
-            result = 'Invalid Date';
-        }else if(result === 'function' && /^class\s/.test(value.toString())) {
-            result = 'class';
         }
-    }
 
-    return result;
+        return result;
+    }
+}catch(e) {
+    console.error(e);
 }
 ````
 
