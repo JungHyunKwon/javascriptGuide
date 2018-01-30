@@ -920,8 +920,8 @@ var hello = {
  * @author JungHyunKwon
  * @since 2018-01-28
  * @version 1.0
- * @param {*} object
- * @return {*}
+ * @param {object} object
+ * @return {object}
  */
 try {
     function copyObject(object) {
