@@ -913,6 +913,8 @@ var hello = {
 ````javascript
 //copyObject.js
 
+'use strict';
+
 /**
  * @name 객체복사
  * @author JungHyunKwon
@@ -1200,6 +1202,8 @@ try {
 ````javascript
 //consoleFix.js
 
+'use strict';
+
 /**
  * @name 콘솔오류방지
  * @author JungHyunKwon
@@ -1265,6 +1269,8 @@ if(!window.console instanceof Object) {
 자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
 //getTypeof.js
+
+'use strict';
 
 /**
  * @name 형태얻기
