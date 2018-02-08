@@ -1,4 +1,4 @@
-# 자바스크립트 가이드 v1.0
+# 자바스크립트 가이드 v1.0.0
 이 문서는 일관성, 가독성, 유지보수 용이성을 위한 참고자료입니다.
 
 ## 기본
@@ -935,7 +935,7 @@ var hello = {
  * @name 객체복사
  * @author JungHyunKwon
  * @since 2018-01-28
- * @version 1.0
+ * @version 1.0.0
  * @param {object} value
  * @return {object}
  */
@@ -1228,7 +1228,7 @@ try {
  * @name 콘솔오류방지
  * @author JungHyunKwon
  * @description 대체콘솔은 console.comment입니다.
- * @version 1.0
+ * @version 1.0.0
  * @since 2018-01-28
  */
 try {
@@ -1300,7 +1300,7 @@ try {
  * @name 형태얻기
  * @author JungHyunKwon
  * @since 2017-12-18
- * @version 1.0
+ * @version 1.0.0
  * @param {*} value
  * @return {string}
  */
