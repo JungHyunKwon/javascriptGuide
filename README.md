@@ -936,21 +936,21 @@ var hello = {
  * @author JungHyunKwon
  * @since 2018-01-28
  * @version 1.0.0
- * @param {object} value
+ * @param {object} object
  * @return {object}
  */
 try {
-    function copyObject(value) {
+    function copyObject(object) {
         var result = {};
 
-        if(value instanceof Object) {
-            for(var i in value) {
-                if(value.hasOwnProperty(i)) {
-                    result[i] = copyObject(value[i]);
+        if(object instanceof Object) {
+            for(var i in object) {
+                if(object.hasOwnProperty(i)) {
+                    result[i] = copyObject(object[i]);
                 }
             }
         }else{
-            result = value;
+            result = object;
         }
 
         return result;
