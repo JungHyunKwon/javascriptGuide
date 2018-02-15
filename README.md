@@ -1459,7 +1459,6 @@ $(function() {
 
 2.js
 $(function() {
-    
     $('body').on('click', function(event) {
         if(!isRun) {
 	    isRun = true; //isRun을 찾지못함
