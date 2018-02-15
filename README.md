@@ -1436,10 +1436,72 @@ $(function() {
     $.tag.body.css('background-color', '#000');
 });
 
-//2.js
+/
+제이쿼리와 관련된 전역변수는 $.variable에 정의하여 재사용합니다.
+````javascript
+//Bad
+
+1.js
 $(function() {
-    $.tag.body.css('color', '#fff');
+    var isRun = false;
+    
+    $('html').on('click', function(event) {
+        if(!isRun) {
+	    isRun = true;
+
+	    $(this).animate({backgroundColor : '#000'}, 500, function() {
+	        isRun = false;
+	    });
+	}
+    });
 });
+
+2.js
+$(function() {
+    
+    $('body').on('click', function(event) {
+        if(!isRun) {
+	    isRun = true; //isRun을 찾지못함
+
+	    $(this).animate({backgroundColor : '#000'}, 500, function() {
+	        isRun = false;
+	    });
+	}
+    });
+});
+
+//Good
+
+//1.js
+$(function() {
+    $.variable = {
+        isRun : false
+    };
+    
+    $('html').on('click', function(event) {
+        if(!isRun) {
+	    $.variable.isRun = false;
+
+	    $(this).animate({backgroundColor : '#000'}, 500, function() {
+	        $.variable.isRun = false;
+	    });
+	}
+    });
+});
+
+/2.js
+$(function() {
+    $('body').on('click', function(event) {
+        if(!$.variable.isRun) {
+	    $.variable.isRun = true;
+
+	    $(this).animate({backgroundColor : '#000'}, 500, function() {
+	        $.variable.isRun = false;
+	    });
+	}
+    });
+});
+
 ````
 
 다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
