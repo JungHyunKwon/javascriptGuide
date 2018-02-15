@@ -1436,8 +1436,8 @@ $(function() {
     $.tag.body.css('background-color', '#000');
 });
 
-/
 제이쿼리와 관련된 전역변수는 $.variable에 정의하여 재사용합니다.
+
 ````javascript
 //Bad
 
