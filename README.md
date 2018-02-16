@@ -974,7 +974,7 @@ var helloWorld = Array();
 var helloWorld = [];
 ````
 
-특정위치에 값을 넣어야할때 빼고는 항목에 대입하지않고 push메소드를 사용합니다.
+특정위치에 값을 넣어야할때 빼고는 항목에 대입하지않고 push를 사용합니다.
 ````javascript
 //Bad
 var helloWorld = [];
