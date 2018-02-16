@@ -1016,7 +1016,7 @@ var helloWorld = String('helloWorld');
 var helloWorld = 'helloWorld';
 ````
 
-### parseInt 메소드
+### parseInt
 문자형에서 숫자형으로 변환할때 특정값을 유도할때 빼고는 parseInt메소드를 사용하며 10진법을 명시합니다.
 
 ````javascript
