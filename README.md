@@ -1307,42 +1307,64 @@ try {
 try {
     function getTypeof(value) {
         var result = 'none';
-
+        
+        //매개변수가 있을때
         if(arguments.length) {
             result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 
+            //undefined일때(ie7, ie8에서 찾지 못함)
             if(value === undefined) {
                 result = 'undefined';
+            
+            //NaN일때(숫자로 처리되서 따로 처리함)
             }else if(result === 'number' && isNaN(value)) {
                 result = 'NaN';
+            
+            //Infinity일때(숫자로 처리되서 따로 처리함)
             }else if(result === 'number' && !isFinite(value)) {
                 if(value.toString() === '-Infinity') {
                     result = '-Infinity';
                 }else{
                     result = 'Infinity';
                 }
-            }else if(result.substr(-8) === 'document') {
+
+            //window일때
+            }else if(value === window) {
+                result = 'window';
+
+            //document일때
+            }else if(value === document) {
                 result = 'document';
-            }else if(result.substr(-7) === 'element') {
+
+            //엘리먼트일때
+            }else if(value.tagName) {
                 result = 'element';
+
+            //제이쿼리 객체일때
             }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
-                var iCount = 0;
+                var iCount = 0,
+                    valueLength = value.length;
 
-                for(var i in value) {
-                    var iType = getTypeof(value[i]);
+                for(var i = 0; i < valueLength; i++) {
+                    var iType = _getTypeof(value[i]);
 
-                    if((iType === 'window' || iType === 'document' || iType === 'element') && !isNaN(Number(i))) {
+                    if(iType === 'window' || iType === 'document' || iType === 'element') {
                         iCount++;
                     }
                 }
 
-                if(value.length && value.length === iCount) {
+                //제이쿼리 엘리먼트일때
+                if(valueLength === iCount) {
                     result = 'jQueryElement';
                 }else{
                     result = 'jQueryObject';
                 }
+            
+            //Invalid Date일때(date로 처리되서 따로 처리함)
             }else if(result === 'date' && isNaN(new Date(value))) {
                 result = 'Invalid Date';
+            
+            //class일때
             }else if(result === 'function' && /^class\s/.test(value.toString())) {
                 result = 'class';
             }
@@ -1448,12 +1470,12 @@ $(function() {
     
     $('html').on('click', function(event) {
         if(!isRun) {
-	    isRun = true;
+        isRun = true;
 
-	    $(this).animate({backgroundColor : '#000'}, 500, function() {
-	        isRun = false;
-	    });
-	}
+        $(this).animate({backgroundColor : '#000'}, 500, function() {
+            isRun = false;
+        });
+    }
     });
 });
 
@@ -1461,12 +1483,12 @@ $(function() {
 $(function() {
     $('body').on('click', function(event) {
         if(!isRun) {
-	    isRun = true; //isRun을 찾지못함
+        isRun = true; //isRun을 찾지못함
 
-	    $(this).animate({backgroundColor : '#000'}, 500, function() {
-	        isRun = false;
-	    });
-	}
+        $(this).animate({backgroundColor : '#000'}, 500, function() {
+            isRun = false;
+        });
+    }
     });
 });
 
@@ -1480,12 +1502,12 @@ $(function() {
     
     $('html').on('click', function(event) {
         if(!isRun) {
-	    $.variable.isRun = false;
+        $.variable.isRun = false;
 
-	    $(this).animate({backgroundColor : '#000'}, 500, function() {
-	        $.variable.isRun = false;
-	    });
-	}
+        $(this).animate({backgroundColor : '#000'}, 500, function() {
+            $.variable.isRun = false;
+        });
+    }
     });
 });
 
@@ -1493,12 +1515,12 @@ $(function() {
 $(function() {
     $('body').on('click', function(event) {
         if(!$.variable.isRun) {
-	    $.variable.isRun = true;
+        $.variable.isRun = true;
 
-	    $(this).animate({backgroundColor : '#000'}, 500, function() {
-	        $.variable.isRun = false;
-	    });
-	}
+        $(this).animate({backgroundColor : '#000'}, 500, function() {
+            $.variable.isRun = false;
+        });
+    }
     });
 });
 
