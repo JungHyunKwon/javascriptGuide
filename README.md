@@ -1263,7 +1263,7 @@ try {
 
 		for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
 			//함수가아닐때
-			if(_getTypeof(window.console[window.console.method[i]]) !== 'function') {
+			if(typeof window.console[window.console.method[i]] !== 'function') {
 				window.console[window.console.method[i]] = function() {
 					var result = [],
 						argumentsLength = arguments.length;
