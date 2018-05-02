@@ -1233,69 +1233,65 @@ try {
  */
 try {
     if(!window.console instanceof Object) {
-		/**
-		 * @name 콘솔오류방지
-		 * @description 콘솔객체가 없을경우 에뮬레이션이 아닌 실제 인터넷 익스플로러9이하에서 콘솔로그 버그를 막을 수 있습니다. 막지 않고 콘솔을 쓸경우 모든 스크립팅은 중단 됩니다. 대체콘솔은 console.comment에 담겨있습니다.
-		 * @since 2017-10-11
-		 */
-		if(_consoleType !== 'object' && _consoleType !== 'console') {
-			window.console = {
-				method : [
-					'assert',
-					'clear',
-					'count',
-					'debug',
-					'dir',
-					'dirxml',
-					'error',
-					'exception',
-					'group',
-					'groupCollapsed',
-					'groupEnd',
-					'info',
-					'log',
-					'markTimeline',
-					'profile',
-					'profileEnd',
-					'table',
-					'time',
-					'timeEnd',
-					'timeStamp',
-					'trace',
-					'warn'
-				],
-				comment : []
-			};
+		window.console = {
+			method : [
+				'assert',
+				'clear',
+				'count',
+				'debug',
+				'dir',
+				'dirxml',
+				'error',
+				'exception',
+				'group',
+				'groupCollapsed',
+				'groupEnd',
+				'info',
+				'log',
+				'markTimeline',
+				'profile',
+				'profileEnd',
+				'table',
+				'time',
+				'timeEnd',
+				'timeStamp',
+				'trace',
+				'warn'
+			],
+			comment : []
+		};
 
-			for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
-				//함수가아닐때
-				if(_getTypeof(window.console[window.console.method[i]]) !== 'function') {
-					window.console[window.console.method[i]] = function() {
-						var result = [],
-							argumentsLength = arguments.length;
+		for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
+			//함수가아닐때
+			if(_getTypeof(window.console[window.console.method[i]]) !== 'function') {
+				window.console[window.console.method[i]] = function() {
+					var result = [],
+						argumentsLength = arguments.length;
+				
+					//매개변수가 2개이상일때
+					if(argumentsLength > 1) {
+						for(var i = 0; i < argumentsLength; i++) {
+							result.push(arguments[i]);
+						}
 					
-						//매개변수가 2개이상일때
-						if(argumentsLength > 1) {
-							for(var i = 0; i < argumentsLength; i++) {
-								result.push(arguments[i]);
-							}
-						
-						//매개변수가 한개일때
-						}else if(argumentsLength === 1) {
-							result = arguments[0];
-						}
-					   
-						//console.comment에 기입
-						if(argumentsLength) {
-							this.comment.push(result);
-						}
+					//매개변수가 한개일때
+					}else if(argumentsLength === 1) {
+						result = arguments[0];
+					}
+				   
+					//console.comment에 기입
+					if(argumentsLength) {
+						this.comment.push(result);
+					}
 
-						return result;
-					};
-				}
+					return result;
+				};
 			}
 		}
     }
+}catch(e) {
+    console.error(e);
+}
 }catch(e) {
     console.error(e);
 }
