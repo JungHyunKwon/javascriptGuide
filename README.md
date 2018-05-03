@@ -929,8 +929,6 @@ var hello = {
 ````javascript
 //copyObject.js
 
-'use strict';
-
 /**
  * @name 객체복사
  * @author JungHyunKwon
@@ -940,8 +938,11 @@ var hello = {
  * @return {object}
  */
 try {
+    'use strict';
+
     function copyObject(value) {
-        var result = {};
+        
+		var result = {};
 
         if(value instanceof Object) {
             for(var i in value) {
@@ -1222,8 +1223,6 @@ try {
 ````javascript
 //consoleFix.js
 
-'use strict';
-
 /**
  * @name 콘솔오류방지
  * @author JungHyunKwon
@@ -1232,7 +1231,9 @@ try {
  * @since 2018-01-28
  */
 try {
-    if(!window.console instanceof Object) {
+    'use strict';
+    
+	if(!window.console instanceof Object) {
 		window.console = {
 			method : [
 				'assert',
@@ -1292,16 +1293,11 @@ try {
 }catch(e) {
     console.error(e);
 }
-}catch(e) {
-    console.error(e);
-}
 ````
 
 자세한 형태를 파악하고 싶다면 아래함수를 사용합니다.
 ````javascript
 //getTypeof.js
-
-'use strict';
 
 /**
  * @name 형태얻기
@@ -1312,6 +1308,8 @@ try {
  * @return {string}
  */
 try {
+	'use strict';
+
 	function getTypeof(value) {
 		var result = 'none';
 		
