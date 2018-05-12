@@ -942,7 +942,7 @@ try {
 
     function copyObject(value) {
         
-		var result = {};
+        var result = {};
 
         if(value instanceof Object) {
             for(var i in value) {
@@ -1233,62 +1233,62 @@ try {
 try {
     'use strict';
     
-	if(!window.console instanceof Object) {
-		window.console = {
-			method : [
-				'assert',
-				'clear',
-				'count',
-				'debug',
-				'dir',
-				'dirxml',
-				'error',
-				'exception',
-				'group',
-				'groupCollapsed',
-				'groupEnd',
-				'info',
-				'log',
-				'markTimeline',
-				'profile',
-				'profileEnd',
-				'table',
-				'time',
-				'timeEnd',
-				'timeStamp',
-				'trace',
-				'warn'
-			],
-			comment : []
-		};
+    if(!window.console instanceof Object) {
+        window.console = {
+            method : [
+                'assert',
+                'clear',
+                'count',
+                'debug',
+                'dir',
+                'dirxml',
+                'error',
+                'exception',
+                'group',
+                'groupCollapsed',
+                'groupEnd',
+                'info',
+                'log',
+                'markTimeline',
+                'profile',
+                'profileEnd',
+                'table',
+                'time',
+                'timeEnd',
+                'timeStamp',
+                'trace',
+                'warn'
+            ],
+            comment : []
+        };
 
-		for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
-			//함수가아닐때
-			if(typeof window.console[window.console.method[i]] !== 'function') {
-				window.console[window.console.method[i]] = function() {
-					var result = [],
-						argumentsLength = arguments.length;
-				
-					//매개변수가 2개이상일때
-					if(argumentsLength > 1) {
-						for(var i = 0; i < argumentsLength; i++) {
-							result.push(arguments[i]);
-						}
-					
-					//매개변수가 한개일때
-					}else if(argumentsLength === 1) {
-						result = arguments[0];
-					}
-				   
-					//console.comment에 기입
-					if(argumentsLength) {
-						this.comment.push(result);
-					}
+        for(var i = 0, consoleMethodLength = window.console.method.length; i < consoleMethodLength; i++) {
+            //함수가아닐때
+            if(typeof window.console[window.console.method[i]] !== 'function') {
+                window.console[window.console.method[i]] = function() {
+                    var result = [],
+                        argumentsLength = arguments.length;
+                
+                    //매개변수가 2개이상일때
+                    if(argumentsLength > 1) {
+                        for(var i = 0; i < argumentsLength; i++) {
+                            result.push(arguments[i]);
+                        }
+                    
+                    //매개변수가 한개일때
+                    }else if(argumentsLength === 1) {
+                        result = arguments[0];
+                    }
+                   
+                    //console.comment에 기입
+                    if(argumentsLength) {
+                        this.comment.push(result);
+                    }
 
-					return result;
-				};
-			}
-		}
+                    return result;
+                };
+            }
+        }
     }
 }catch(e) {
     console.error(e);
@@ -1308,69 +1308,76 @@ try {
  * @return {string}
  */
 try {
-	'use strict';
+    'use strict';
 
-	function getTypeof(value) {
-		var result = 'none';
-		
-		//매개변수가 있을때
-		if(arguments.length) {
-			result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
+    function getTypeof(value) {
+        var result = 'none';
+        
+        //매개변수가 있을때
+        if(arguments.length) {
+            result = Object.prototype.toString.call(value).toLowerCase().replace('[object ', '').replace(']', '');
 
-			//undefined일때(ie7, ie8에서 찾지 못함)
-			if(value === undefined) {
-				result = 'undefined';
-			
-			//NaN일때(숫자로 처리되서 따로 처리함)
-			}else if(result === 'number' && isNaN(value)) {
-				result = 'NaN';
-			
-			//Infinity일때(숫자로 처리되서 따로 처리함)
-			}else if(result === 'number' && !isFinite(value)) {
-				result = value.toString();
+            //undefined일때(ie7, ie8에서 찾지 못함)
+            if(value === undefined) {
+                result = 'undefined';
+            
+            //NaN일때(숫자로 처리되서 따로 처리함)
+            }else if(result === 'number' && isNaN(value)) {
+                result = 'NaN';
+            
+            //Infinity일때(숫자로 처리되서 따로 처리함)
+            }else if(result === 'number' && !isFinite(value)) {
+                result = value.toString();
 
-			//window일때
-			}else if(value === window) {
-				result = 'window';
+            //window일때
+            }else if(value === window) {
+                result = 'window';
 
-			//document일때
-			}else if(value === document) {
-				result = 'document';
+            //document일때
+            }else if(value === document) {
+                result = 'document';
 
-			//엘리먼트일때
-			}else if(value.tagName) {
-				result = 'element';
+            //엘리먼트일때
+            }else if(value.tagName) {
+                result = 'element';
 
-			//제이쿼리 객체일때
-			}else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
-				var element = window.jQuery.map(value, function(element, index) {
-						var elementType = _getTypeof(element);
+            //제이쿼리 객체일때
+            }else if(typeof window.jQuery === 'function' && value instanceof window.jQuery) {
+                var valueLength = value.length,
+                    i = 0;
 
-						if(elementType === 'window' || elementType === 'document' || elementType === 'element') {
-							return element;
-						}
-					}),
-					elementLength = element.length;
+                result = [];
 
-				//제이쿼리 엘리먼트일때
-				if(elementLength && value.length === elementLength) {
-					result = 'jQueryElement';
-				}else{
-					result = 'jQueryObject';
-				}
-			
-			//Invalid Date일때(date로 처리되서 따로 처리함)
-			}else if(result === 'date' && isNaN(new Date(value))) {
-				result = 'Invalid Date';
-			
-			//class일때
-			}else if(result === 'function' && /^class\s/.test(value.toString())) {
-				result = 'class';
-			}
-		}
+                for(; i < valueLength; i++) {
+                    var valueI = value[i],
+                        elementType = _getTypeof(valueI);
 
-		return result;
-	}
+                    if(elementType === 'window' || elementType === 'document' || elementType === 'element') {
+                        result.push(valueI);
+                    }
+                }
+                
+                var resultLength = result.length;
+
+                //제이쿼리 엘리먼트일때
+                if(resultLength && valueLength === resultLength) {
+                    result = 'jQueryElement';
+                }else{
+                    result = 'jQueryObject';
+                }
+            
+            //Invalid Date일때(date로 처리되서 따로 처리함)
+            }else if(result === 'date' && isNaN(new Date(value))) {
+                result = 'Invalid Date';
+            
+            //class일때
+            }else if(result === 'function' && /^class\s/.test(value.toString())) {
+                result = 'class';
+            }
+        }
+
+        return result;
+    }
 }catch(e) {
     console.error(e);
 }
