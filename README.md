@@ -1350,7 +1350,7 @@ try {
 
                 for(; i < valueLength; i++) {
                     var valueI = value[i],
-                        elementType = _getTypeof(valueI);
+                        elementType = getTypeof(valueI);
 
                     if(elementType === 'window' || elementType === 'document' || elementType === 'element') {
                         result.push(valueI);
