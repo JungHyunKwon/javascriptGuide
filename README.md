@@ -941,7 +941,6 @@ try {
     'use strict';
 
     function copyObject(value) {
-        
         var result = {};
 
         if(value instanceof Object) {
