@@ -935,7 +935,7 @@ var hello = {
  * @since 2018-01-28
  * @version 1.0.0
  * @param {object} value
- * @return {object}
+ * @return {*}
  */
 try {
     'use strict';
