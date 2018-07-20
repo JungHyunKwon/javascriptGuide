@@ -1232,7 +1232,7 @@ try {
 try {
     'use strict';
     
-    if(!window.console instanceof Object) {
+    if(!(window.console instanceof Object)) {
         window.console = {
             method : [
                 'assert',
