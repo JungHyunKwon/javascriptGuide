@@ -1221,6 +1221,7 @@ var $body = $('body');
 제이쿼리 작성할때 이 구문을 사용합니다.
 ````javascript
 try {
+    //제이쿼리가 함수일때
     if(typeof window.jQuery === 'function') {
         (function($) {
             //내용
