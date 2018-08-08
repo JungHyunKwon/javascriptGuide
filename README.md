@@ -1225,7 +1225,7 @@ try {
     if(typeof window.jQuery === 'function') {
         (function($) {
             //내용
-        })(jQuery);
+        })(window.jQuery);
     }else{
         throw '제이쿼리가 없습니다.';
     }
