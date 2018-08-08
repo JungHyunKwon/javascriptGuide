@@ -1221,14 +1221,14 @@ var $body = $('body');
 제이쿼리 작성할때 이 구문을 사용합니다.
 ````javascript
 try {
-    //제이쿼리가 함수일때
-    if(typeof window.jQuery === 'function') {
-        (function($) {
-            //내용
-        })(window.jQuery);
-    }else{
-        throw '제이쿼리가 없습니다.';
-    }
+	(function($) {
+		//제이쿼리가 함수일때
+		if(typeof $ === 'function') {
+			//내용
+		}else{
+			throw '제이쿼리가 없습니다.';
+		}
+	})(window.jQuery);
 }catch(e) {
     console.error(e);
 }
