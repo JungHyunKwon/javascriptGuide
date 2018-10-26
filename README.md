@@ -1,10 +1,10 @@
 # 자바스크립트 가이드 v1.0.0
-이 문서는 일관성, 가독성, 유지보수 용이성을 위한 참고자료입니다.
+이 문서는 일관성, 가독성, 유지 보수 용이성을 위한 참고 자료입니다.
 
 ## 기본
 
 ### strict 모드
-js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
+js 파일 또는 스크립트 태그 첫 줄에 strict 모드를 사용합니다.
 
 ````javascript
 'use strict';
@@ -20,7 +20,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
  */
 ````
 #### 버전
-추가, 수정, 삭제를 했을때 버전을 올립니다.
+추가, 수정, 삭제를 했을 때 버전을 올립니다.
 
 * 0.0.1 ~ 0.5.0 : 알파
 * 0.5.1 ~ 0.9.9 : 베타
@@ -28,9 +28,9 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 
 ##### 버전상승 방법
 
-* 큰틀일때 1.0.0 올립니다.
-* 함수단위일때 0.1.0 올립니다.
-* 짧은 구문일때 0.0.1 올립니다.
+* 큰 틀일 때 1.0.0 올립니다.
+* 함수 단위일 때 0.1.0 올립니다.
+* 짧은 구문일 때 0.0.1 올립니다.
 
 ### 들여쓰기
 4칸
@@ -46,7 +46,7 @@ js파일 또는 스크립트 태그 첫줄에 strict 모드를 사용합니다.
 ### 부호
 
 #### 따옴표
-작은따옴표로 통일하며 작은따옴표안에 큰따옴표는 상관없습니다.
+작은따옴표로 통일하며 작은따옴표 안에 큰따옴표는 상관없습니다.
 
 ````javascript
 //Bad
@@ -58,7 +58,7 @@ var helloWorld = 'helloWorld';
 ````
 
 #### 중괄호
-소괄호 마침[ ) ]이 끝나고 시작되는 중괄호 시작[ { ]되기전에 한칸 띄웁니다.
+소괄호 마침[ ) ]이 끝나고 시작되는 중괄호 시작[ { ] 되기 전에 한 칸 띄웁니다.
 
 ````javascript
 //example1
@@ -97,7 +97,7 @@ for(var i = 0; i < helloWorldLength; i++) {
 ````
 
 #### 소괄호
-소괄호 시작[ ( ]이전에 공백은 사용하지 않습니다.
+소괄호 시작[ ( ] 이전에 공백은 사용하지 않습니다.
 
 ````javascript
 //example1
@@ -181,7 +181,7 @@ var helloWorld = 'helloWorld';
 
 #### 세미콜론
 
-명령문 종료시 반드시 세미콜론을 기입합니다.
+명령문 종료 시 반드시 세미콜론을 기입합니다.
 ````javascript
 //Bad
 var helloWorld = 'helloWorld'
@@ -190,7 +190,7 @@ var helloWorld = 'helloWorld'
 var helloWorld = 'helloWorld';
 ````
 
-의미없는 세미콜론 및 문자를 사용하지 않습니다.
+의미 없는 세미콜론 및 문자를 사용하지 않습니다.
 ````javascript
 //Bad
 ;function helloWorld() {
@@ -213,7 +213,7 @@ function helloWorld() {
 }
 ````
 
-변수선언을 제외한 중괄호 마침[ } ]뒤에 세미콜론을 넣지 않습니다.
+변수 선언을 제외한 중괄호 마침[ } ] 뒤에 세미콜론을 넣지 않습니다.
 ````javascript
 //Bad
 function helloWorld() {
@@ -232,7 +232,7 @@ var helloWorld = function() {
 ````
 
 #### 연산자
-연산자를 쓸때 앞뒤 공백을 사용합니다.
+연산자를 쓸 때 앞뒤 공백을 사용합니다.
 
 ````javascript
 //Bad
@@ -271,7 +271,7 @@ helloWorld += helloWorld;
 ````
 
 ##### 비교 연산자
-삼항연산자를 기본으로하며 상황에따라서 다르게 써도 됩니다.
+삼 항 연산자를 기본으로 하며 상황에 따라서 다르게 써도 됩니다.
 
 ````javascript
 //Bad
@@ -289,7 +289,7 @@ if(helloWorld === 'helloWorld') {
 }
 ````
 
-특정값을 골라내야만 할때 빼고는 이 구문을 사용합니다.
+특정 값을 골라내야만 할 때 빼고는 이 구문을 사용합니다.
 ````javascript
 //example1
 
@@ -324,7 +324,7 @@ if(!helloWorld) {
 }
 ````
 
-아래값은 false에 해당하는 값이며 나머지값은 true입니다.
+아래 값은 false에 해당하는 값이며 나머지 값은 true입니다.
 
 * null
 * NaN
@@ -333,7 +333,7 @@ if(!helloWorld) {
 * undefined
 
 ### 개행
-가독성을위해 개행을 합니다.
+가독성을 위해 개행을 합니다.
 
 ````javascript
 //example1
@@ -435,10 +435,10 @@ var helloWorld = {hello1 : 'world1',
                   hello10 : 'world10'};
 ````
 
-누가봐도 보기좋게 개행하면 어떻게 개행하던 상관없습니다.
+누가 봐도 보기 좋게 개행하면 어떻게 개행해도 좋습니다.
 
 #### 콤마
-콤마다음은 한칸 띄웁니다. 개행했을때는 하지않습니다.
+콤마 다음은 한 칸 띄웁니다. 개행했을 때는 하지 않습니다.
 
 ````javascript
 //Bad
@@ -466,7 +466,7 @@ var helloWorld = 'helloWorld';
 ````
 
 #### 상수(값이 변할 수 없음)
-* 상수표기는 전체 대문자 + 스네이크 표기법으로 작성합니다.
+* 상수 표기는 전체 대문자 + 스네이크 표기법으로 작성합니다.
 
 ````javascript
 //Bad
@@ -518,7 +518,7 @@ var hello = {
 };
 ````
 
-값이 변하지 않는다고 무조건 상수로 두지 않습니다. 이 값은 건드리면 안된다. 하는것을 상수로 표현합니다.
+값이 변하지 않는다고 무조건 상수로 두지 않습니다. 이 값은 건드리면 안 된다. 하는 것을 상수로 표현합니다.
 ````javascript
 //Bad
  var HELLO_WORLD = 'helloWorld',
@@ -530,7 +530,7 @@ var hello = {
 ````
 
 #### 은닉(값이 숨겨져 할당된 값을 수정할 수 없는 위치에 있음)
-할당된 값을 변경하지 말자는 약속이며 맨앞에 언더스코어를 붙여 작성합니다.
+할당된 값을 변경하지 말자는 약속이며 맨 앞에 언더 스코어를 붙여 작성합니다.
 
 ````javascript
 //Bad
@@ -571,7 +571,7 @@ function Helloworld() {
 }
 ````
 #### 축약
-이름이 너무길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약어를 제공하거나 누구나 알아볼 수 있어야 됩니다. 
+이름이 너무 길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약 어를 제공하거나 누구나 알아볼 수 있어야 됩니다.
 ````javascript
 //before
 var functionType = typeof function() {};
@@ -591,16 +591,16 @@ result | rst | 결과
 global | g | 전역
 local | l | 지역
 index | idx | 인덱스
-count | cnt | 카운트
+count | cnt | 셈
 length | len | 갯수
 array | arr | 배열
 object | obj | 객체
 value | val | 값
 current | crt | 현재
 active | atv | 활성화
-actived | atvd | 활성화된
+actived | atvd | 활성화 된
 prev | prv | 이전
-next | nxt | 다.음
+next | nxt | 다음
 is | | ~~인가?
 has | | 가지고 있는지
 i ~ z | | 루프변수
@@ -611,12 +611,12 @@ arguments | args | 인자
 message | msg | 메세지
 string | str | 문자
 number | num | 숫자
-boolean | bool | 불리언
+boolean | bool | 부울
 error | err | 오류
 window | wdw | 윈도우
 document | dcmt | 문서
 
-루프변수는 i부터 시작합니다.
+루프 변수는 i부터 시작합니다.
 
 #### 규칙
 * 명사 + 명사
@@ -626,14 +626,14 @@ document | dcmt | 문서
 
 객체 프로퍼티명도 동일합니다.
 
-#### 금지단어
+#### 금지 단어
 <https://www.w3schools.com/js/js_reserved.asp>를 피해서 작성해야 합니다.
 
 #### 파일
-아래 순서대로 이름을 온점[ . ]단위로 조합하여 파일이름을 작명합니다.
+아래 순서대로 이름을 온점[ . ] 단위로 조합하여 파일 이름을 작명합니다.
 
 1. 컴포넌트명
-2. 모듈명, 메소드명, 함수명
+2. 모듈명, 메서드명, 함수명
 3. min
 
 ### 생략
@@ -670,7 +670,7 @@ for(var i = 0; i < helloWorld; i++) {
 }
 ````
 
-한줄 if문에서 소괄호[ () ]를 생략하지 않습니다.
+한 줄 if 문에서 소괄호[ () ]를 생략하지 않습니다.
 ````javascript
 //Bad
 var helloWorld = 'helloWorld';
@@ -685,7 +685,7 @@ var helloWorld = 'helloWorld';
 
 ## 변수선언
 
-여러번 선언하지 않는다. 상황에 따라서 분리가 필요할때 분리할 수 있습니다.
+여러 번 선언하지 않는다. 상황에 따라서 분리가 필요할 때 분리할 수 있습니다.
 ````javascript
 //Bad
 var hello = 'hello';
@@ -705,7 +705,7 @@ helloWorld = 'helloWorld';
 var helloWorld = 'helloWorld';
 ````
 
-undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있을경우 예외에 맞게 작성하면 됩니다.
+undefined를 유도한 값이 아니라면 초기화를 해주며 예외가 있을 경우 예외에 맞게 작성하면 됩니다.
 ````javascript
 //Bad
 var hello = 'hello',
@@ -718,7 +718,7 @@ var hello = 'hello',
     world = 'world';
 ````
 
-필요한 구문에서 변수할당하며 중복된 변수명은 상단에 선언합니다.
+필요한 구문에서 변수 할당하며 중복된 변수명은 상단에 선언합니다.
 ````javascript
 //example1
 
@@ -807,7 +807,7 @@ for(i = 0; i < helloWorldLength; i++) {
 }
 ````
 
-같은 값을 선언할때 구문 입니다.
+같은 값을 선언할 때 구문입니다.
 ````javascript
 //Bad
 var hello = world = 'helloWorld';
@@ -817,7 +817,7 @@ var hello = 'helloWorld',
     world = hello;
 ````
 
-값에 따라 바뀌는 변수일때 구문입니다.
+값에 따라 바뀌는 변수일 때 구문입니다.
 ````javascript
 //example1
 
@@ -860,7 +860,7 @@ function helloWorld(say) {
 }
 ````
 
-\#.length를 여러번 사용할때 변수에 담아 사용합니다.
+\#.length를 여러 번 사용할 때 변수에 담아 사용합니다.
 ````javascript
 //Bad
 var helloWorld = 'helloWorld';
@@ -899,7 +899,7 @@ var helloWorld = Object();
 var helloWorld = {};
 ````
 
-프로퍼티의 맨마지막 콤마는 적지않습니다.
+프로퍼티의 맨 마지막 콤마는 적지 않습니다.
 ````javascript
 //Bad
 var hello = {
@@ -912,7 +912,7 @@ var hello = {
 };
 ````
 
-프로퍼티명을 JSON 프로퍼티명처럼 작성하지 않습니다.
+속성 이름을 JSON 속성 이름처럼 작성하지 않습니다.
 ````javascript
 //Bad
 var hello = {
@@ -939,7 +939,7 @@ var helloWorld = Array();
 var helloWorld = [];
 ````
 
-특정위치에 값을 넣어야할때 빼고는 항목에 대입하지않고 push를 사용합니다.
+특정 위치에 값을 넣어야 할 때 빼고는 항목에 대입하지 않고 push를 사용합니다.
 ````javascript
 //Bad
 var helloWorld = [];
@@ -952,7 +952,7 @@ var helloWorld = [];
 helloWorld.push('helloWorld');
 ````
 
-배열을 복사할때는 이 구문을 사용합니다.
+배열을 복사할 때는 이 구문을 사용합니다.
 ````javascript
 //Bad
 var helloWorld = ['helloWorld1', 'helloWorld2', 'helloWorld3'],
@@ -982,7 +982,7 @@ var helloWorld = 'helloWorld';
 ````
 
 ### parseInt
-문자형에서 숫자형으로 변환할때 특정값을 유도할때 빼고는 parseInt메소드를 사용하며 10진법을 명시합니다.
+문자형에서 숫자형으로 변환할 때 특정 값을 유도할 때 빼고는 parseInt 메서드를 사용하며 10진법을 명시합니다.
 
 ````javascript
 //Bad
@@ -1014,7 +1014,7 @@ var helloWorld = 1 + '';
 ````
 
 ## 숫자
-형변환이 필요할때 parseInt메소드를 기본으로 사용하며 예외빼고는 아래 구문을 이용합니다.
+형 변환이 필요할 때 parseInt 메서드를 기본으로 사용하며 예외 빼고는 아래 구문을 이용합니다.
 
 ````javascript
 //Bad
@@ -1028,7 +1028,7 @@ var helloWorld = 1;
 ````
 
 ## 불리언
-형변환이 필요할때 빼고는 아래 구문을 이용합니다.
+형 변환이 필요할 때 빼고는 아래 구문을 이용합니다.
 
 ````javascript
 //Bad
@@ -1057,7 +1057,7 @@ function helloWorld() {
 }
 ````
 
-즉시실행함수는 이 구문을 사용합니다.
+즉시 실행 함수는 이 구문을 사용합니다.
 ````javascript
 (function() {
     //내용
@@ -1068,7 +1068,7 @@ function helloWorld() {
 }());
 ````
 
-함수호출을 줄입시다.
+함수 호출을 줄입시다.
 ````javascript
 //Bad
 document.getElementsByTagName('body')[0].style.color = '#fff';
@@ -1081,7 +1081,7 @@ body.style.color = '#fff';
 body.style.backgroundColor = '#000';
 ````
 
-한번만 반환하며 특별한 경우가 아닌경우 변수명은 result로 통일합니다.
+한 번만 반환하며 특별한 경우가 아닌 경우 변수명은 result로 통일합니다.
 ````javascript
 //Bad
 function helloWorld(say) {
@@ -1121,7 +1121,7 @@ function helloWorld(say) {
 }
 ````
 
-오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[ } ]뒤에 catch또는 finally가 반드시 붙어야됩니다.
+오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[ } ] 뒤에 catch 또는 finally가 반드시 붙어야 됩니다.
 ````javascript
 //Bad
 function helloWorld(say) {
@@ -1149,7 +1149,7 @@ function helloWorld(say) {
 }
 ````
 
-try catch안에서의 전역함수는 익명함수로 작성합니다.
+try catch 안에서의 전역 함수는 익명함 수로 작성합니다.
 ````javascript
 //Bad
 try {
@@ -1187,7 +1187,7 @@ try {
 
 ## 제이쿼리
 
-제이쿼리 호출순서입니다.
+제이쿼리 호출 순서입니다.
 ````javascript
 console.log(1);
     
@@ -1209,7 +1209,7 @@ $(window).on('load', function(event) {
 });
 ````
 
-제이쿼리 엘리먼트 변수는 $로 시작합니다.
+제이쿼리 요소 변수는 $로 시작합니다.
 ````javascript
 //Bad
 var body = $('body');
@@ -1218,11 +1218,11 @@ var body = $('body');
 var $body = $('body');
 ````
 
-제이쿼리 작성할때 이 구문을 사용합니다.
+제이쿼리 작성할 때 이 구문을 사용합니다.
 ````javascript
 try {
 	(function($) {
-		//제이쿼리가 함수일때
+		//제이쿼리가 함수일 때
 		if(typeof $ === 'function') {
 			//내용
 		}else{
@@ -1234,7 +1234,7 @@ try {
 }
 ````
 
-제이쿼리 엘리먼트는 $.tag에 정의하여 재사용합니다.
+제이쿼리 요소는 $.tag에 정의하여 재사용합니다.
 ````javascript
 //Bad
 
@@ -1286,7 +1286,7 @@ $(function() {
 $(function() {
     $('body').on('click', function(event) {
         if(!isRun) {
-        isRun = true; //isRun을 찾지못함
+        isRun = true; //isRun을 찾지 못함
 
         $(this).animate({backgroundColor : '#000'}, 500, function() {
             isRun = false;
@@ -1329,7 +1329,7 @@ $(function() {
 
 ````
 
-다수의 호출을 피하고 묶을 수 있는 메소드는 묶어 사용합니다.
+다수의 호출을 피하고 묶을 수 있는 메서드는 묶어 사용합니다.
 ````javascript
 //example1
 
@@ -1382,7 +1382,7 @@ $('body').on('click.common', function(event) {
 });
 ````
 
-이벤트는 on메소드를 사용합니다.
+이벤트는 on 메서드를 사용합니다.
 ````javascript
 //Bad
 $('body').click(function(event) {
@@ -1408,7 +1408,7 @@ $('body').on('click', function(event) {
 });
 ````
 
-필요한 경우 이외에 trigger대신 triggerHandler를 사용합니다.
+필요한 경우 이외에 trigger 대신 triggerHandler를 사용합니다.
 ````javascript
 //Bad
 var $body = $('body');
@@ -1429,7 +1429,7 @@ $body.on('click', function() {
 $body.triggerHandler('click');
 ````
 
-필요한 경우 이외에 전체 이벤트를 부르지말고 특정 이벤트만 불러 사용합니다.
+필요한 경우 이외에 전체 이벤트를 부르지 말고 특정 이벤트만 불러 사용합니다.
 ````javascript
 //Bad
 var $body = $('body');
