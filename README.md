@@ -591,13 +591,12 @@ function | fn | 함수
 temp | tmp | 임시
 global | g | 전역
 local | l | 지역
-index | idx | 인덱스
+index | idx | 색인
 count | cnt | 셈
 length | len | 갯수
 array | arr | 배열
 object | obj | 객체
 value | val | 값
-i ~ z | | 루프변수
 button | btn | 버튼
 mobile | m | 모바일
 arguments | args | 인자
