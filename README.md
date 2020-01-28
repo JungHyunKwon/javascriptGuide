@@ -4,7 +4,7 @@
 ## 기본
 
 ### strict 모드
-js 파일 또는 스크립트 태그 첫 줄에 strict 모드를 사용합니다.
+파일, 태그, 자기호출함수 첫 줄에 strict 모드를 사용합니다.
 
 ````javascript
 'use strict';
@@ -20,7 +20,7 @@ js 파일 또는 스크립트 태그 첫 줄에 strict 모드를 사용합니다
  */
 ````
 #### 버전
-추가, 수정, 삭제를 했을 때 버전을 올립니다.
+추가, 변경, 삭제를 했을 때 버전을 올립니다.
 
 * 0.0.1 ~ 0.5.0 : 알파
 * 0.5.1 ~ 0.9.9 : 베타
@@ -344,6 +344,7 @@ var hello1 = 1, hello2 = 1, world1 = 1, world2 = 1;
 //Good
 var hello1 = 1,
     hello2 = 1,
+
     world1 = 1,
     world2 = 1;
 
@@ -363,6 +364,7 @@ world2++;
 //Good
 var hello1 = 1,
     hello2 = 1,
+
     world1 = 1,
     world2 = 1;
 
@@ -438,7 +440,7 @@ var helloWorld = {hello1 : 'world1',
 누가 봐도 보기 좋게 개행하면 어떻게 개행해도 좋습니다.
 
 #### 콤마
-콤마 다음은 한 칸 띄웁니다. 개행했을 때는 하지 않습니다.
+콤마 다음은 한 칸 띄웁니다. 개행했을 때 하지 않습니다.
 
 ````javascript
 //Bad
@@ -455,7 +457,7 @@ function helloWorld(nm, say) {
 ### 이름
 
 #### 변수
-기본은 카멜 표기법입니다.
+전역 변수의 오염은 피하며 카멜 표기법을 지향합니다.
 
 ````javascript
 //Bad
@@ -571,7 +573,7 @@ function Helloworld() {
 }
 ````
 #### 축약
-이름이 너무 길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약 어를 제공하거나 누구나 알아볼 수 있어야 됩니다.
+이름이 너무 길어 축약이 필요한 경우는 음절로 축약하거나 주석으로 축약어를 제공하거나 누구나 알아볼 수 있어야 됩니다.
 ````javascript
 //before
 var functionType = typeof function() {};
@@ -587,7 +589,6 @@ var fnType = typeof function() {};
 name | nm | 이름
 function | fn | 함수
 temp | tmp | 임시
-result | rst | 결과
 global | g | 전역
 local | l | 지역
 index | idx | 인덱스
@@ -596,15 +597,7 @@ length | len | 갯수
 array | arr | 배열
 object | obj | 객체
 value | val | 값
-current | crt | 현재
-active | atv | 활성화
-actived | atvd | 활성화 된
-prev | prv | 이전
-next | nxt | 다음
-is | | ~~인가?
-has | | 가지고 있는지
 i ~ z | | 루프변수
-all | a | 모든
 button | btn | 버튼
 mobile | m | 모바일
 arguments | args | 인자
@@ -613,8 +606,6 @@ string | str | 문자
 number | num | 숫자
 boolean | bool | 부울
 error | err | 오류
-window | wdw | 윈도우
-document | dcmt | 문서
 
 루프 변수는 i부터 시작합니다.
 
@@ -834,9 +825,7 @@ function helloWorld(say) {
 
 //Good
 function helloWorld(say) {
-    var result = say || 'helloWorld';
-
-    return result;
+    return say || 'helloWorld';
 }
 
 //example2
@@ -854,9 +843,7 @@ function helloWorld(say) {
 
 //Good
 function helloWorld(say) {
-    var result = say && undefined;
-
-    return result;
+    return say && undefined;
 }
 ````
 
@@ -1149,36 +1136,6 @@ function helloWorld(say) {
 }
 ````
 
-try catch 안에서의 전역 함수는 익명함 수로 작성합니다.
-````javascript
-//Bad
-try {
-    function helloWorld(say) {
-        return say;
-    }
-}catch(e) {
-    console.error(e);
-}
-
-//Bad
-try {
-    this.helloWorld = function(say) {
-        return say;
-    };
-}catch(e) {
-    console.error(e);
-}
-
-//Good
-try {
-    window.helloWorld = function(say) {
-        return say;
-    };
-}catch(e) {
-    console.error(e);
-}
-````
-
 ### 규칙
 * 동사 + 명사
 * 동사 + 형용사 + 명사
@@ -1220,21 +1177,12 @@ var $body = $('body');
 
 제이쿼리 작성할 때 이 구문을 사용합니다.
 ````javascript
-try {
-	(function($) {
-		//제이쿼리가 함수일 때
-		if(typeof $ === 'function') {
-			//내용
-		}else{
-			throw '제이쿼리가 없습니다.';
-		}
-	})(window.jQuery);
-}catch(e) {
-    console.error(e);
-}
+(function($) {
+    //내용
+})(jQuery);
 ````
 
-제이쿼리 요소는 $.tag에 정의하여 재사용합니다.
+변수에 정의하여 재사용합니다.
 ````javascript
 //Bad
 
@@ -1254,79 +1202,17 @@ $(function() {
 
 //1.js
 $(function() {
-    $.tag = {
-        body : $('body')
+    window.element = {
+        $body : $('body')
     };
 
-    $.tag.body.css('background-color', '#000');
+    element.$body.css('background-color', '#000');
 });
-````
 
-제이쿼리와 관련된 전역변수는 $.variable에 정의하여 재사용합니다.
-
-````javascript
-//Bad
-
-1.js
+//2.js
 $(function() {
-    var isRun = false;
-    
-    $('html').on('click', function(event) {
-        if(!isRun) {
-        isRun = true;
-
-        $(this).animate({backgroundColor : '#000'}, 500, function() {
-            isRun = false;
-        });
-    }
-    });
+    element.$body.css('color', '#fff');
 });
-
-2.js
-$(function() {
-    $('body').on('click', function(event) {
-        if(!isRun) {
-        isRun = true; //isRun을 찾지 못함
-
-        $(this).animate({backgroundColor : '#000'}, 500, function() {
-            isRun = false;
-        });
-    }
-    });
-});
-
-//Good
-
-//1.js
-$(function() {
-    $.variable = {
-        isRun : false
-    };
-    
-    $('html').on('click', function(event) {
-        if(!isRun) {
-        $.variable.isRun = false;
-
-        $(this).animate({backgroundColor : '#000'}, 500, function() {
-            $.variable.isRun = false;
-        });
-    }
-    });
-});
-
-/2.js
-$(function() {
-    $('body').on('click', function(event) {
-        if(!$.variable.isRun) {
-        $.variable.isRun = true;
-
-        $(this).animate({backgroundColor : '#000'}, 500, function() {
-            $.variable.isRun = false;
-        });
-    }
-    });
-});
-
 ````
 
 다수의 호출을 피하고 묶을 수 있는 메서드는 묶어 사용합니다.
