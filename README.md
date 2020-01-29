@@ -1107,6 +1107,31 @@ function helloWorld(say) {
 }
 ````
 
+특별한 경우를 제외하고 같은 자료형으로 반환해야 합니다.
+````javascript
+//Bad
+function helloWorld(say) {
+    var result = '';
+
+    if(say === 'hello') {
+        result = true;
+    }
+
+	return result;
+}
+
+//Good
+function helloWorld(say) {
+    var result = false;
+
+    if(say === 'hello') {
+        result = true;
+    }
+
+	return result;
+}
+````
+
 오류를 유발할 수 있는 구문은 try catch finally를 이용하며 try 중괄호 마침[ } ] 뒤에 catch 또는 finally가 반드시 붙어야 됩니다.
 ````javascript
 //Bad
